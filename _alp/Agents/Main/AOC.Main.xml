@@ -2,6 +2,12 @@
 <ActiveObjectClass>
 	<Id>1779214914767</Id>
 	<Name><![CDATA[Main]]></Name>
+	<StartupCode><![CDATA[shipClass.setVisible(false);
+
+Point p = oceanNode.randomPointInside();
+shipClass.setPos(p.x, p.y);
+
+ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1779214914772</Id>
@@ -86,13 +92,14 @@
 		<Length>100</Length>
 		<Rotation>0</Rotation>
 		<ScaleType>BASED_ON_LENGTH</ScaleType>
-		<ModelLength>10</ModelLength>
+		<ModelLength>100</ModelLength>
 		<LengthUnits>METER</LengthUnits>
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
 	<CurrentLevel>1779214914773</CurrentLevel>
 	<ConnectionsId>1779214914768</ConnectionsId>
+	<Events xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1779214914768</Id>
@@ -134,6 +141,7 @@
 			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 			<Z>0</Z>
 			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+			<Presentation xmlns:al="http://anylogic.com"/>
 		</Level>
 	</Presentation>
 </ActiveObjectClass>

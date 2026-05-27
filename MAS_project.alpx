@@ -21,8 +21,8 @@
 		<InspectionWindowColorTheme>DEFAULT</InspectionWindowColorTheme>
 		<Frame>
 			<Id>1779214914765</Id>
-			<Width>1000</Width>
-			<Height>600</Height>
+			<Width>1240</Width>
+			<Height>800</Height>
 		</Frame>
 		<Database>
 			<Id>1779214914764</Id>
@@ -59,6 +59,12 @@
 			<VersionMajor>1</VersionMajor>
 			<VersionMinor>0</VersionMinor>
 			<VersionBuild>0</VersionBuild>
+		</RequiredLibraryReference>
+		<RequiredLibraryReference>
+			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
+			<VersionMajor>8</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<VersionBuild>5</VersionBuild>
 		</RequiredLibraryReference>
 	</Model>
 	<ConvertersApplied>
