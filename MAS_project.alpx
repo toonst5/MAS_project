@@ -9,6 +9,24 @@
 		<EngineVersion>6</EngineVersion>
 		<JavaPackageName><![CDATA[mas_project]]></JavaPackageName>
 		<ModelTimeUnit>Hour</ModelTimeUnit>
+		<OptionLists>
+			<OptionList>
+				<Id>1779703153042</Id>
+				<Name><![CDATA[OptionList]]></Name>
+				<Option>
+					<Id>1779703153043</Id>
+					<Name><![CDATA[Risk-averse]]></Name>
+				</Option>
+				<Option>
+					<Id>1779703153044</Id>
+					<Name><![CDATA[Risk-taking]]></Name>
+				</Option>
+				<Option>
+					<Id>1779703153045</Id>
+					<Name><![CDATA[Schoolinh]]></Name>
+				</Option>
+			</OptionList>
+		</OptionLists>
 		<Folders/>
 		<ActiveObjectClasses/>
 		<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
@@ -59,6 +77,12 @@
 			<VersionMajor>1</VersionMajor>
 			<VersionMinor>0</VersionMinor>
 			<VersionBuild>0</VersionBuild>
+		</RequiredLibraryReference>
+		<RequiredLibraryReference>
+			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
+			<VersionMajor>8</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<VersionBuild>5</VersionBuild>
 		</RequiredLibraryReference>
 	</Model>
 	<ConvertersApplied>
