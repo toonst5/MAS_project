@@ -38,7 +38,23 @@
 				<Alignment>LEFT</Alignment>
 			</Text>
 		</Presentation>
-		<Parameters/>
+		<Parameters>
+			<Parameter>
+				<ParameterName>Width</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>CellWidth</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>FishesInitial</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>MaxPerCell</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>PredatorsInitial</ParameterName>
+			</Parameter>
+		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>
 			<ExecutionMode>realTimeScaled</ExecutionMode>

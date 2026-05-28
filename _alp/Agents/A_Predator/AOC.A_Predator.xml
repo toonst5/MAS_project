@@ -1,55 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActiveObjectClass>
-	<Id>1779214914767</Id>
-	<Name><![CDATA[Main]]></Name>
-	<ExtendsReference>
-		<PackageName>mas_project</PackageName>
-		<ClassName>A_Fish</ClassName>
-	</ExtendsReference>
-	<Parameters>
-		<Parameter>
-			<Name><![CDATA[Width]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[CellWidth]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[MaxPerCell]]></Name>
-		</Parameter>
-	</Parameters>
-	<StartupCode><![CDATA[shipClass.setVisible(false);
-
-double shipW = 120;
-double shipH = 100;
-
-double shipX = oceanNode.getX() + shipW+ uniform(0, oceanNode.getWidth() -  2* shipW);
-double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* shipH);
-
-//Point p = oceanNode.randomPointInside();
-shipClass.setPos(shipX, shipY);
-
-
-for (A_Fish f : fish) {
-	double Fx = oceanNode.getX() + 8 
-             + uniform(0, oceanNode.getWidth() - 2 * 8);
-    double Fy = oceanNode.getY() + 5 
-             + uniform(0, oceanNode.getHeight() - 2 * 5);
-             f.setXY(Fx, Fy);
-	}
-
-for (A_Predator pre : predator) {
-	double Px = oceanNode.getX() + 12
-             + uniform(0, oceanNode.getWidth() - 2 * 12);
-    double Py = oceanNode.getY() + 8 
-             + uniform(0, oceanNode.getHeight() - 2 * 8);
-             pre.setXY(Px, Py);
-	}
-
-ShipSinks.restart(uniform(1, 50));]]></StartupCode>
+	<Id>1779952911829</Id>
+	<Name><![CDATA[A_Predator]]></Name>
+	<StartupCode><![CDATA[setXY(( ( cell % Width ) * CellWidth ) + uniform( 0, CellWidth ),
+( (int)(cell/Width) * CellWidth ) + uniform( 0, CellWidth ));]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
-		<Id>1779214914772</Id>
-		<Name><![CDATA[1779214914772]]></Name>
+		<Id>1779952911834</Id>
+		<Name><![CDATA[1779952911834]]></Name>
 		<GenericParameterValue Class="CodeValue">
 			<Code><![CDATA[T extends Agent]]></Code>
 		</GenericParameterValue>
@@ -106,9 +64,9 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 	</EnvironmentProperties>
 	<DatasetsCreationProperties>
 		<AutoCreate>true</AutoCreate>
-		<Id>1779214914766</Id>
+		<Id>1779952911828</Id>
 		<OccurrenceAtTime>true</OccurrenceAtTime>
-		<OccurrenceDate>1779264000000</OccurrenceDate>
+		<OccurrenceDate>1779955200000</OccurrenceDate>
 		<OccurrenceTime Class="CodeUnitValue">
 			<Code><![CDATA[0]]></Code>
 			<Unit Class="TimeUnits">SECOND</Unit>
@@ -119,7 +77,7 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 		</RecurrenceCode>
 	</DatasetsCreationProperties>
 	<ScaleRuler>
-		<Id>1779214914770</Id>
+		<Id>1779952911832</Id>
 		<Name><![CDATA[scale]]></Name>
 		<X>0</X>
 		<Y>-150</Y>
@@ -130,24 +88,22 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 		<Length>100</Length>
 		<Rotation>0</Rotation>
 		<ScaleType>BASED_ON_LENGTH</ScaleType>
-		<ModelLength>100</ModelLength>
+		<ModelLength>50</ModelLength>
 		<LengthUnits>METER</LengthUnits>
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
-	<CurrentLevel>1779214914773</CurrentLevel>
-	<ConnectionsId>1779214914768</ConnectionsId>
+	<CurrentLevel>1779952911835</CurrentLevel>
+	<ConnectionsId>1779952911830</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
-	<Events xmlns:al="http://anylogic.com"/>
-	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
-			<Id>1779214914768</Id>
+			<Id>1779952911830</Id>
 			<Name><![CDATA[connections]]></Name>
-			<X>50</X>
-			<Y>-50</Y>
+			<X>170</X>
+			<Y>-100</Y>
 			<Label>
-				<X>15</X>
+				<X>30</X>
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
@@ -165,10 +121,28 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 			<LineArrowPosition>END</LineArrowPosition>
 		</AgentLink>
 	</AgentLinks>
-	<EmbeddedObjects xmlns:al="http://anylogic.com"/>
+	<ContainerLinks>
+		<ContainerLink>
+			<Id>1779953844235</Id>
+			<Name><![CDATA[main]]></Name>
+			<X>50</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>mas_project</PackageName>
+				<ClassName>Main</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
+	</ContainerLinks>
 	<Presentation>
 		<Level>
-			<Id>1779214914773</Id>
+			<Id>1779952911835</Id>
 			<Name><![CDATA[level]]></Name>
 			<X>0</X>
 			<Y>0</Y>
