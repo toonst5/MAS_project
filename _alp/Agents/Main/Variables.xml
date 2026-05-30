@@ -10,7 +10,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
@@ -18,7 +18,7 @@
               StaticVariable="false">
 			<Type><![CDATA[ArrayList<A_Fish>[]]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new ArrayList[ Width * Width ]]]></Code>
+				<Code><![CDATA[//new ArrayList[ Width * Width ]]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -32,7 +32,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
@@ -40,7 +40,7 @@
               StaticVariable="false">
 			<Type><![CDATA[ArrayList<A_Predator>[]]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new ArrayList[ Width * Width ]]]></Code>
+				<Code><![CDATA[//new ArrayList[ Width * Width ]]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -54,7 +54,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
 			<Type><![CDATA[int]]></Type>
@@ -82,7 +82,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
 			<Type><![CDATA[int]]></Type>
@@ -110,14 +110,14 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
 			<Type><![CDATA[int]]></Type>
 			<UnitType>NONE</UnitType>
 			<SdArray>false</SdArray>
 			<DefaultValue Class="CodeValue">
-				<Code><![CDATA[100]]></Code>
+				<Code><![CDATA[10]]></Code>
 			</DefaultValue>
 			<ParameterEditor>
 				<Id>1779874214469</Id>
@@ -138,7 +138,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
 			<Type><![CDATA[int]]></Type>

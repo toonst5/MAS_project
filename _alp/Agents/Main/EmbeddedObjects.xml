@@ -2,7 +2,7 @@
 <EmbeddedObjects>
 	<EmbeddedObject>
 		<Id>1779874113279</Id>
-		<Name><![CDATA[fish]]></Name>
+		<Name><![CDATA[fishPopulation]]></Name>
 		<X>-280</X>
 		<Y>640</Y>
 		<Label>
@@ -10,7 +10,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<PresentationId>1779874114648</PresentationId>
 		<ActiveObjectClass>
@@ -21,30 +21,16 @@
 			<GenericParameterSubstituteReference>
 				<PackageName>mas_project</PackageName>
 				<ClassName>A_Fish</ClassName>
-				<ItemName>1779872244309</ItemName>
+				<ItemName>1779703153033</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[Width]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[CellWidth]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[MaxPerCell]]></Name>
-			</Parameter>
-		</Parameters>
+		<Parameters/>
 		<ReplicationFlag>true</ReplicationFlag>
 		<Replication Class="CodeValue">
-			<Code><![CDATA[FishesInitial]]></Code>
+			<Code><![CDATA[100]]></Code>
 		</Replication>
 		<CollectionType>ARRAY_LIST_BASED</CollectionType>
 		<InEnvironment>true</InEnvironment>
-		<InitialSpeedCode Class="CodeUnitValue">
-			<Code><![CDATA[50]]></Code>
-			<Unit Class="SpeedUnits">MPS</Unit>
-		</InitialSpeedCode>
 		<InitialLocationType>NODE</InitialLocationType>
 		<ColumnCode Class="CodeValue">
 			<Code><![CDATA[0]]></Code>
@@ -96,6 +82,10 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[rate]]></Name>
+				<Value Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[interarrivalTime]]></Name>
@@ -198,7 +188,7 @@
 							<GenericParameterSubstituteReference>
 								<PackageName>mas_project</PackageName>
 								<ClassName>A_Fish</ClassName>
-								<ItemName>1779872244309</ItemName>
+								<ItemName>1779703153033</ItemName>
 							</GenericParameterSubstituteReference>
 						</GenericParameterSubstitute>
 						<Parameters/>
@@ -247,9 +237,15 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[addToCustomPopulation]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[population]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[fishPopulation]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[pushProtocol]]></Name>
@@ -439,15 +435,15 @@
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1779953842769</Id>
-		<Name><![CDATA[predator]]></Name>
-		<X>-270</X>
-		<Y>590</Y>
+		<Name><![CDATA[predatorPopulation]]></Name>
+		<X>-280</X>
+		<Y>610</Y>
 		<Label>
 			<X>20</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<PresentationId>1779953844230</PresentationId>
 		<ActiveObjectClass>
@@ -471,17 +467,18 @@
 		</Parameters>
 		<ReplicationFlag>true</ReplicationFlag>
 		<Replication Class="CodeValue">
-			<Code><![CDATA[10]]></Code>
+			<Code><![CDATA[5]]></Code>
 		</Replication>
 		<CollectionType>ARRAY_LIST_BASED</CollectionType>
 		<InEnvironment>true</InEnvironment>
-		<InitialLocationType>XYZ</InitialLocationType>
+		<InitialLocationType>NODE</InitialLocationType>
 		<ColumnCode Class="CodeValue">
 			<Code><![CDATA[0]]></Code>
 		</ColumnCode>
 		<RowCode Class="CodeValue">
 			<Code><![CDATA[0]]></Code>
 		</RowCode>
+		<NodeCode>oceanNode</NodeCode>
 		<LocationNameCode Class="CodeValue">
 			<Code><![CDATA[""]]></Code>
 		</LocationNameCode>

@@ -2,21 +2,6 @@
 <ActiveObjectClass>
 	<Id>1779214914767</Id>
 	<Name><![CDATA[Main]]></Name>
-	<ExtendsReference>
-		<PackageName>mas_project</PackageName>
-		<ClassName>A_Fish</ClassName>
-	</ExtendsReference>
-	<Parameters>
-		<Parameter>
-			<Name><![CDATA[Width]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[CellWidth]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[MaxPerCell]]></Name>
-		</Parameter>
-	</Parameters>
 	<StartupCode><![CDATA[shipClass.setVisible(false);
 
 double shipW = 120;
@@ -29,7 +14,7 @@ double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* s
 shipClass.setPos(shipX, shipY);
 
 
-for (A_Fish f : fish) {
+/*for (A_Fish f : fish) {
 	double Fx = oceanNode.getX() + 8 
              + uniform(0, oceanNode.getWidth() - 2 * 8);
     double Fy = oceanNode.getY() + 5 
@@ -44,7 +29,7 @@ for (A_Predator pre : predator) {
              + uniform(0, oceanNode.getHeight() - 2 * 8);
              pre.setXY(Px, Py);
 	}
-
+*/
 ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
@@ -133,7 +118,7 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 		<ModelLength>100</ModelLength>
 		<LengthUnits>METER</LengthUnits>
 		<Scale>10</Scale>
-		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+		<InheritedFromParentAgentType>false</InheritedFromParentAgentType>
 	</ScaleRuler>
 	<CurrentLevel>1779214914773</CurrentLevel>
 	<ConnectionsId>1779214914768</ConnectionsId>

@@ -40,19 +40,16 @@
 		</Presentation>
 		<Parameters>
 			<Parameter>
-				<ParameterName>Width</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>CellWidth</ParameterName>
-			</Parameter>
-			<Parameter>
 				<ParameterName>FishesInitial</ParameterName>
 			</Parameter>
 			<Parameter>
-				<ParameterName>MaxPerCell</ParameterName>
+				<ParameterName>PredatorsInitial</ParameterName>
 			</Parameter>
 			<Parameter>
-				<ParameterName>PredatorsInitial</ParameterName>
+				<ParameterName>AWidth</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>ACellWidth</ParameterName>
 			</Parameter>
 		</Parameters>
 		<PresentationProperties>

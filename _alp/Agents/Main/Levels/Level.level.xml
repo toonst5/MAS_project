@@ -2255,7 +2255,7 @@
 	</Group>
 	<EmbeddedObjectPresentation>
 		<Id>1779874114648</Id>
-		<Name><![CDATA[fish_presentation]]></Name>
+		<Name><![CDATA[fishPopulation_presentation]]></Name>
 		<X>0</X>
 		<Y>0</Y>
 		<Label>
@@ -2277,7 +2277,7 @@
 	</EmbeddedObjectPresentation>
 	<EmbeddedObjectPresentation>
 		<Id>1779953844230</Id>
-		<Name><![CDATA[predator_presentation]]></Name>
+		<Name><![CDATA[predatorPopulation_presentation]]></Name>
 		<X>0</X>
 		<Y>0</Y>
 		<Label>

@@ -10,7 +10,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties TriggerType="rate" Mode="occuresOnce">
 			<Timeout Class="CodeUnitValue">
@@ -46,7 +46,7 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties TriggerType="rate" Mode="occuresOnce">
 			<Timeout Class="CodeUnitValue">

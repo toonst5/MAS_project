@@ -16,14 +16,14 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
+		<LineWidth>4</LineWidth>
 		<LineColor>-16777216</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<RadiusX>25</RadiusX>
 		<RadiusY>40</RadiusY>
 		<Rotation>0.0</Rotation>
-		<FillColor>-16776961</FillColor>
+		<FillColor>-4565549</FillColor>
 		<FillMaterial>null</FillMaterial>
 	</Oval>
 	<Text>
@@ -53,7 +53,7 @@
 	</Text>
 	<Text>
 		<Id>1779703586367</Id>
-		<Name><![CDATA[txtAngle1]]></Name>
+		<Name><![CDATA[txtState]]></Name>
 		<X>-65</X>
 		<Y>0</Y>
 		<Label>
@@ -68,7 +68,8 @@
 		<Z>0</Z>
 		<Rotation>90.0</Rotation>
 		<Color>-65536</Color>
-		<Text><![CDATA[text]]></Text>
+		<Text/>
+		<TextCode>statechart.getState()</TextCode>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>10</Size>
@@ -92,7 +93,7 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
+		<LineWidth>4</LineWidth>
 		<LineColor>-16777216</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
@@ -102,7 +103,7 @@
 		<RadiusY>40</RadiusY>
 		<StartAngle>-121.4000015258789</StartAngle>
 		<Angle>241.1999969482422</Angle>
-		<FillColor>-16776961</FillColor>
+		<FillColor>-4565549</FillColor>
 		<FillMaterial>null</FillMaterial>
 	</Arc>
 	<Oval>
@@ -121,14 +122,14 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
+		<LineWidth>4</LineWidth>
 		<LineColor>-16777216</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<RadiusX>40</RadiusX>
 		<RadiusY>40</RadiusY>
 		<Rotation>0.0</Rotation>
-		<FillColor>-16776961</FillColor>
+		<FillColor>-4565549</FillColor>
 		<FillMaterial>null</FillMaterial>
 	</Oval>
 	<Oval>

@@ -22,10 +22,10 @@
 	<AgentProperties>
 		<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
 		<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
-		<RotateAnimationVertically>false</RotateAnimationVertically>
+		<RotateAnimationVertically>true</RotateAnimationVertically>
 		<VelocityCode Class="CodeUnitValue">
-			<Code><![CDATA[10]]></Code>
-			<Unit Class="SpeedUnits">MPS</Unit>
+			<Code><![CDATA[0.1]]></Code>
+			<Unit Class="SpeedUnits">KPH</Unit>
 		</VelocityCode>
 		<PhysicalLength Class="CodeUnitValue">
 			<Code><![CDATA[1]]></Code>
@@ -87,7 +87,7 @@
 		<Rotation>0</Rotation>
 		<ScaleType>BASED_ON_LENGTH</ScaleType>
 		<ModelLength>10</ModelLength>
-		<LengthUnits>CENTIMETER</LengthUnits>
+		<LengthUnits>METER</LengthUnits>
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
@@ -98,8 +98,8 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707108052</Id>
 			<Name><![CDATA[Searching]]></Name>
-			<X>320</X>
-			<Y>120</Y>
+			<X>450</X>
+			<Y>190</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -108,15 +108,17 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>moveTo(randomPoint())</EntryAction>
+				<EntryAction>Point p = main.oceanNode.randomPointInside();
+moveTo(p.x, p.y);
+</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707930840</Id>
 			<Name><![CDATA[move_to_food]]></Name>
-			<X>190</X>
-			<Y>220</Y>
+			<X>320</X>
+			<Y>290</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -125,16 +127,16 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(nearestFood != null)
-    moveTo(nearestFood);</EntryAction>
+				<EntryAction>if(IV_nearestFood != null)
+    moveTo(IV_nearestFood);</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707948777</Id>
 			<Name><![CDATA[Eat]]></Name>
-			<X>190</X>
-			<Y>310</Y>
+			<X>320</X>
+			<Y>380</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -145,7 +147,7 @@
 			<Properties Width="100" Height="30">
 				<EntryAction>if(IV_nearestFood != null) {
     IV_energy += 30;
-    nearestFood.dispose();
+    //nearestFood.dispose();
 }</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -153,8 +155,8 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707953649</Id>
 			<Name><![CDATA[move_to_shelter]]></Name>
-			<X>300</X>
-			<Y>220</Y>
+			<X>430</X>
+			<Y>290</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -171,8 +173,8 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707958428</Id>
 			<Name><![CDATA[hide]]></Name>
-			<X>310</X>
-			<Y>310</Y>
+			<X>440</X>
+			<Y>380</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -182,15 +184,14 @@
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
 				<EntryAction>stop()</EntryAction>
-				<ExitAction>!(IV_nearestPredator != null &amp;&amp; distanceTo(IV_nearestPredator) &lt; V_visionRange)</ExitAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779707963230</Id>
 			<Name><![CDATA[move_to_fish]]></Name>
-			<X>470</X>
-			<Y>220</Y>
+			<X>600</X>
+			<Y>290</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -199,16 +200,33 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(nearestFish != null)
-    moveTo(nearestFish);</EntryAction>
+				<EntryAction>
+double cx = 0;
+double cy = 0;
+int count = 0;
+
+for (A_Fish f : main.fishPopulation) {
+    if (f != this &amp;&amp; distanceTo(f) &lt; V_visionRange) {
+        cx += f.getX();
+        cy += f.getY();
+        count++;
+    }
+}
+
+if (count &gt; 0) {
+    cx /= count;
+    cy /= count;
+    moveTo(cx, cy);
+}
+</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1779708033964</Id>
 			<Name><![CDATA[reproduce]]></Name>
-			<X>470</X>
-			<Y>310</Y>
+			<X>600</X>
+			<Y>380</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -217,10 +235,10 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(energy &gt; 50) {
-    Fish baby = add_fishPopulation();
-    baby.setXY(getX(), getY());
-    energy -= 30;
+				<EntryAction>if(IV_energy &gt; 50) {
+    //A_Fish baby = add_fishPopulation();
+    //baby.setXY(getX(), getY());
+    IV_energy -= 30;
 }</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -228,8 +246,8 @@
 		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 			<Id>1779707102962</Id>
 			<Name><![CDATA[statechart]]></Name>
-			<X>380</X>
-			<Y>80</Y>
+			<X>500</X>
+			<Y>150</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -252,8 +270,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779708128755</Id>
 			<Name><![CDATA[transition]]></Name>
-			<X>320</X>
-			<Y>140</Y>
+			<X>450</X>
+			<Y>210</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -277,7 +295,8 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestFood != null &amp;&amp; distanceTo(IV_nearestFood) &lt; V_visionRange</Condition>
+				<Condition>IV_nearestFood != null 
+&amp;&amp; distanceTo(IV_nearestFood) &lt; V_visionRange</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -292,8 +311,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779708140433</Id>
 			<Name><![CDATA[transition1]]></Name>
-			<X>240</X>
-			<Y>250</Y>
+			<X>370</X>
+			<Y>320</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -332,8 +351,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779709575549</Id>
 			<Name><![CDATA[transition2]]></Name>
-			<X>370</X>
-			<Y>150</Y>
+			<X>500</X>
+			<Y>220</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -357,7 +376,8 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestPredator != null &amp;&amp; distanceTo(IV_nearestPredator) &lt; V_visionRange</Condition>
+				<Condition>IV_nearestPredator != null 
+&amp;&amp; distanceTo(IV_nearestPredator) &lt; (V_visionRange*0.1)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -372,8 +392,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779709665915</Id>
 			<Name><![CDATA[transition3]]></Name>
-			<X>370</X>
-			<Y>250</Y>
+			<X>510</X>
+			<Y>320</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -397,7 +417,7 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>distanceTo(IV_nearestShelter) &lt; 2</Condition>
+				<Condition>IV_nearestShelter != null &amp;&amp;	distanceTo(IV_nearestShelter) &lt; 2</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -412,8 +432,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779709710917</Id>
 			<Name><![CDATA[transition4]]></Name>
-			<X>420</X>
-			<Y>140</Y>
+			<X>550</X>
+			<Y>210</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -437,7 +457,13 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_energy &gt; 60 &amp;&amp; IV_nearestFish != null &amp;&amp; IV_nearestFish != this</Condition>
+				<Condition>(IV_energy &gt; 60 
+&amp;&amp; IV_nearestFish != null 
+&amp;&amp; IV_nearestFish != this)
+||
+(IV_nearestFish != null
+&amp;&amp; IV_nearestFish != this
+&amp;&amp; countNeighbors() &lt; V_schoolingSize)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -452,8 +478,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779709854976</Id>
 			<Name><![CDATA[transition5]]></Name>
-			<X>520</X>
-			<Y>250</Y>
+			<X>650</X>
+			<Y>320</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -477,7 +503,7 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>distanceTo(IV_nearestFish) &lt; 2</Condition>
+				<Condition>distanceTo(IV_nearestFish) &lt; 2 &amp;&amp; IV_energy &gt; 60 </Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -492,8 +518,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779710101044</Id>
 			<Name><![CDATA[transition6]]></Name>
-			<X>200</X>
-			<Y>340</Y>
+			<X>330</X>
+			<Y>410</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -544,8 +570,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779710172654</Id>
 			<Name><![CDATA[transition7]]></Name>
-			<X>320</X>
-			<Y>340</Y>
+			<X>450</X>
+			<Y>410</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -576,12 +602,12 @@
 				</Point>
 			</Points>
 			<IconOffset>270.0</IconOffset>
-			<Properties Source="1779707958428" Target="1779707108052" Trigger="arrival">
+			<Properties Source="1779707958428" Target="1779707108052" Trigger="condition">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>true</Condition>
+				<Condition>IV_nearestPredator == null || distanceTo(IV_nearestPredator) &gt;= V_visionRange</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -596,8 +622,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1779710203517</Id>
 			<Name><![CDATA[transition8]]></Name>
-			<X>510</X>
-			<Y>340</Y>
+			<X>640</X>
+			<Y>410</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -645,8 +671,109 @@
 				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780147846627</Id>
+			<Name><![CDATA[transition9]]></Name>
+			<X>530</X>
+			<Y>190</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>60</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>60</X>
+					<Y>10</Y>
+				</Point>
+				<Point>
+					<X>20</X>
+					<Y>10</Y>
+				</Point>
+			</Points>
+			<IconOffset>60.0</IconOffset>
+			<Properties Source="1779707108052" Target="1779707108052" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780148392947</Id>
+			<Name><![CDATA[transition10]]></Name>
+			<X>700</X>
+			<Y>310</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>50</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>50</X>
+					<Y>-110</Y>
+				</Point>
+				<Point>
+					<X>-150</X>
+					<Y>-110</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1779707963230" Target="1779707108052" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
 	</StatechartElements>
 	<Events xmlns:al="http://anylogic.com"/>
+	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1779703153029</Id>
@@ -658,7 +785,7 @@
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<HandleReceiveInConnections>false</HandleReceiveInConnections>
 			<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
@@ -677,6 +804,25 @@
 			<LineArrowPosition>END</LineArrowPosition>
 		</AgentLink>
 	</AgentLinks>
+	<ContainerLinks>
+		<ContainerLink>
+			<Id>1779973298494</Id>
+			<Name><![CDATA[main]]></Name>
+			<X>200</X>
+			<Y>-100</Y>
+			<Label>
+				<X>20</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>mas_project</PackageName>
+				<ClassName>Main</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
+	</ContainerLinks>
 	<Presentation>
 		<Level>
 			<Id>1779703153034</Id>
