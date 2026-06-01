@@ -17,5 +17,12 @@ if (IV_energy <= 0 || IV_age >= V_maxAge) {
 }
 
 
+
+
+/*ALCODEEND*/}
+
+void energyLevel()
+{/*ALCODESTART::1780300381268*/
+IV_energy = max(0, IV_energy -1);
 /*ALCODEEND*/}
 

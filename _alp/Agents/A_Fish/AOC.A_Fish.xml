@@ -2,6 +2,8 @@
 <ActiveObjectClass>
 	<Id>1779703153028</Id>
 	<Name><![CDATA[A_Fish]]></Name>
+	<StartupCode><![CDATA[double IV_energy = 20;
+]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1779703153033</Id>
@@ -110,6 +112,7 @@
 			<Properties Width="100" Height="30">
 				<EntryAction>Point p = main.oceanNode.randomPointInside();
 moveTo(p.x, p.y);
+
 </EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -127,8 +130,16 @@ moveTo(p.x, p.y);
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(IV_nearestFood != null)
-    moveTo(IV_nearestFood);</EntryAction>
+				<EntryAction>int choice = uniform_discr(0, 2);
+
+if (choice == 0) moveTo(main.food1.getX(), main.food1.getY());
+else if (choice == 1) moveTo(main.food2.getX(), main.food2.getY());
+else moveTo(main.food3.getX(), main.food3.getY());
+
+//moveTo(targetFood.getX(), targetFood.getY());
+
+//if(IV_nearestFood != null)
+//    moveTo(IV_nearestFood);</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -145,10 +156,11 @@ moveTo(p.x, p.y);
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(IV_nearestFood != null) {
-    IV_energy += 30;
+				<EntryAction>
+//if(IV_nearestFood != null) {
+    IV_energy += 80;
     //nearestFood.dispose();
-}</EntryAction>
+//}</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -295,8 +307,8 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestFood != null 
-&amp;&amp; distanceTo(IV_nearestFood) &lt; V_visionRange</Condition>
+				<Condition>IV_energy &lt; 15 // &amp;&amp; IV_nearestFood != null 
+//&amp;&amp; distanceTo(IV_nearestFood) &lt; V_visionRange</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -336,7 +348,9 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestFood != null &amp;&amp; distanceTo(IV_nearestFood) &lt; 2</Condition>
+				<Condition>distanceTo(main.food1.getX(), main.food1.getY()) &lt;= main.food1.getRadiusX()+ 5 || distanceTo(main.food2.getX(), main.food2.getY()) &lt; main.food2.getRadiusX()+5 || distanceTo(main.food3.getX(), main.food3.getY()) &lt; main.food3.getRadiusX()+ 5
+
+ //IV_nearestFood != null &amp;&amp; distanceTo(IV_nearestFood) &lt; 2</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>

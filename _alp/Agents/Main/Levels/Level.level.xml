@@ -3,8 +3,8 @@
 	<RectangleNode>
 		<Id>1779707499029</Id>
 		<Name><![CDATA[oceanNode]]></Name>
-		<X>40</X>
-		<Y>40</Y>
+		<X>60</X>
+		<Y>20</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2297,4 +2297,75 @@
 		<Latitude>0.0</Latitude>
 		<Longitude>0.0</Longitude>
 	</EmbeddedObjectPresentation>
+	<OvalWall>
+		<Id>1780299617695</Id>
+		<Name><![CDATA[food2]]></Name>
+		<X>760</X>
+		<Y>80</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<LineColor>-3308225</LineColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillingType>HATCHED_AREA</FillingType>
+		<ZHeight>20</ZHeight>
+		<Rotation>0.0</Rotation>
+		<RadiusX>397.5</RadiusX>
+		<RadiusY>50</RadiusY>
+		<Circle>false</Circle>
+	</OvalWall>
+	<OvalWall>
+		<Id>1780299664485</Id>
+		<Name><![CDATA[food1]]></Name>
+		<X>1060</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<LineColor>-3308225</LineColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillingType>HATCHED_AREA</FillingType>
+		<ZHeight>20</ZHeight>
+		<Rotation>0.0</Rotation>
+		<RadiusX>175</RadiusX>
+		<RadiusY>20</RadiusY>
+	</OvalWall>
+	<OvalWall>
+		<Id>1780299687914</Id>
+		<Name><![CDATA[food3]]></Name>
+		<X>220</X>
+		<Y>540</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<LineColor>-3308225</LineColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillingType>HATCHED_AREA</FillingType>
+		<ZHeight>20</ZHeight>
+		<Rotation>45.0</Rotation>
+		<RadiusX>180</RadiusX>
+		<RadiusY>60</RadiusY>
+		<Circle>false</Circle>
+	</OvalWall>
 </Presentation>

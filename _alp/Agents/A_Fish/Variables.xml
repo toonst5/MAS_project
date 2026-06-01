@@ -10,13 +10,16 @@
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
+		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[100]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
