@@ -124,7 +124,6 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 	<ConnectionsId>1779214914768</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Events xmlns:al="http://anylogic.com"/>
-	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1779214914768</Id>
