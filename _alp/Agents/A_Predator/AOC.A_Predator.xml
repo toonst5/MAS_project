@@ -110,7 +110,8 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>//traceln("RandomWalk");
+				<EntryAction>
+//traceln("RandomWalk");
 setSpeed(IV_defaultSpeed);
 Point p = main.oceanNode.randomPointInside();
 moveTo(p.x, p.y);</EntryAction>
