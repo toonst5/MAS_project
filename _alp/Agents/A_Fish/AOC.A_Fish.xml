@@ -476,7 +476,8 @@ if (count &gt; 0) {
 				</Timeout>
 				<Condition>(IV_energy &gt; 90 
 &amp;&amp; IV_nearestFish != null 
-&amp;&amp; IV_nearestFish != this)
+&amp;&amp; IV_nearestFish != this
+&amp;&amp; main.fishPopulation.contains(IV_nearestFish))
 ||
 (IV_nearestFish != null
 &amp;&amp; IV_nearestFish != this
@@ -521,7 +522,9 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestFish!=null&amp;&amp;distanceTo(IV_nearestFish) &lt; 2 &amp;&amp; IV_energy &gt; 60 </Condition>
+				<Condition>IV_nearestFish!=null
+&amp;&amp; !main.fishPopulation.contains(IV_nearestFish)
+&amp;&amp;distanceTo(IV_nearestFish) &lt; 2 &amp;&amp; IV_energy &gt; 60 </Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>

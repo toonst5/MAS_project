@@ -110,11 +110,11 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>traceln("RandomWalk");
+				<EntryAction>//traceln("RandomWalk");
 setSpeed(IV_defaultSpeed);
 Point p = main.oceanNode.randomPointInside();
 moveTo(p.x, p.y);</EntryAction>
-				<ExitAction>traceln("EndOfWalk");</ExitAction>
+				<ExitAction>//traceln("EndOfWalk");</ExitAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -504,6 +504,95 @@ visionRangeCircle.setRadius(IV_visionRange);
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>true;</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780434860810</Id>
+			<Name><![CDATA[transition7]]></Name>
+			<X>280</X>
+			<Y>90</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>-20</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>-20</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780432975273" Target="1780432975273" Trigger="arrival">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780435346585</Id>
+			<Name><![CDATA[transition8]]></Name>
+			<X>210</X>
+			<Y>250</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-50</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780433097759" Target="1780433003242" Trigger="condition">
+				<Action>//traceln("Target loss");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>!main.fishPopulation.contains(IV_target)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
