@@ -15,6 +15,7 @@ shipClass.setPos(shipX, shipY);
 
 
 
+
 /*for (A_Fish f : fish) {
 	double Fx = oceanNode.getX() + 8 
              + uniform(0, oceanNode.getWidth() - 2 * 8);
@@ -22,6 +23,7 @@ shipClass.setPos(shipX, shipY);
              + uniform(0, oceanNode.getHeight() - 2 * 5);
              f.setXY(Fx, Fy);
 	}
+	
 
 for (A_Predator pre : predator) {
 	double Px = oceanNode.getX() + 12

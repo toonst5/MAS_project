@@ -130,13 +130,14 @@ moveTo(p.x, p.y);
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>int choice = uniform_discr(0, 2);
+				<EntryAction>
+int choice = uniform_discr(0, 1);
+if (choice == 0) 
+    moveTo(main.food1.randomPointInside());
+    //moveTo(main.food1.getX() + uniform(0, main.food1.getWidth()), main.food1.getY() + uniform(0, main.food1.getHeight()));
+ else
+    moveTo(main.food2.getX() + uniform(0, main.food2.getWidth()), main.food2.getY() + uniform(0, main.food2.getHeight()));
 
-if (choice == 0) moveTo(main.food1.getX(), main.food1.getY());
-else if (choice == 1) moveTo(main.food2.getX(), main.food2.getY());
-else moveTo(main.food3.getX(), main.food3.getY());
-
-//moveTo(targetFood.getX(), targetFood.getY());
 
 //if(IV_nearestFood != null)
 //    moveTo(IV_nearestFood);</EntryAction>
@@ -348,9 +349,9 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>distanceTo(main.food1.getX(), main.food1.getY()) &lt;= main.food1.getRadiusX()+ 5 || distanceTo(main.food2.getX(), main.food2.getY()) &lt; main.food2.getRadiusX()+5 || distanceTo(main.food3.getX(), main.food3.getY()) &lt; main.food3.getRadiusX()+ 5
+				<Condition>distanceTo(main.food1.getX(), main.food1.getY()) &lt;= 5 || distanceTo(main.food2.getX(), main.food2.getY()) &lt;= 5 //|| distanceTo(main.food3.getX(), main.food3.getY()) &lt; 5
 
- //IV_nearestFood != null &amp;&amp; distanceTo(IV_nearestFood) &lt; 2</Condition>
+//IV_nearestFood != null &amp;&amp; distanceTo(IV_nearestFood) &lt; 2</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -565,6 +566,7 @@ if (count &gt; 0) {
 			</Points>
 			<IconOffset>150.0</IconOffset>
 			<Properties Source="1779707948777" Target="1779707108052" Trigger="arrival">
+				<Action>moveTo(main.oceanNode.randomPoint());</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
