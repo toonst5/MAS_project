@@ -18,7 +18,7 @@
 				<Unit Class="TimeUnits">HOUR</Unit>
 			</Timeout>
 			<Rate Class="CodeUnitValue">
-				<Code><![CDATA[30]]></Code>
+				<Code><![CDATA[5]]></Code>
 				<Unit Class="RateUnits">PER_HOUR</Unit>
 			</Rate>
 			<Id>1779710345941</Id>

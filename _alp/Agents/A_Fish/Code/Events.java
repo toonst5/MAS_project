@@ -1,6 +1,6 @@
 void senseEnvironment()
 {/*ALCODESTART::1779710345943*/
-IV_nearestFood = nearestFood();
+IV_foodTarget = nearestFood();
 IV_nearestPredator = nearestPredator();
 IV_nearestFish = nearestFish();
 IV_nearestShelter = null
@@ -9,11 +9,11 @@ IV_nearestShelter = null
 void lifeCycle()
 {/*ALCODESTART::1779710449694*/
 IV_age += 1;
-IV_energy -= 2;
+IV_energy -= 10;
 
 
 if (IV_energy <= 0 || IV_age >= V_maxAge) {
-    //behavior.takeTransitionTo(behavior.DEAD);
+    main.remove_fishPopulation(this);
 }
 
 
@@ -23,6 +23,6 @@ if (IV_energy <= 0 || IV_age >= V_maxAge) {
 
 void energyLevel()
 {/*ALCODESTART::1780300381268*/
-IV_energy = max(0, IV_energy -1);
+//IV_energy = max(0, IV_energy -1);
 /*ALCODEEND*/}
 

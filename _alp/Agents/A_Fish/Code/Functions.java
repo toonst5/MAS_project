@@ -38,9 +38,25 @@ if (main != null)
 return nearest;
 /*ALCODEEND*/}
 
-Agent nearestFood()
+ShapeRectangle nearestFood()
 {/*ALCODESTART::1779981415967*/
-return null;
+
+ShapeRectangle closestFood = null;
+double minDist = Double.MAX_VALUE;
+
+for (ShapeRectangle n : main.food_Nodes) {
+    // only consider open food nodes
+    if (n.getWidth() > 30) {//n.isOpen()
+        double d = distanceTo(n.getCenter().x, n.getCenter().y);
+
+        if (d < minDist) {
+            minDist = d;
+            closestFood = n;
+        }
+    }
+}
+
+return closestFood;
 /*ALCODEEND*/}
 
 double countNeighbors()

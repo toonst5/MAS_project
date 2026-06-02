@@ -34,7 +34,7 @@
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>Agent</ReturnType>
+		<ReturnType>ShapeRectangle</ReturnType>
 		<Id>1779981415967</Id>
 		<Name><![CDATA[nearestFood]]></Name>
 		<X>20</X>
