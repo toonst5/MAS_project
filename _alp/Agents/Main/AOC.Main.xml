@@ -13,7 +13,13 @@ double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* s
 //Point p = oceanNode.randomPointInside();
 shipClass.setPos(shipX, shipY);
 
-
+exportFile.println(
+	"time"
+	+ "; "
+	+ "fishPopulationSize"
+	+ "; "
+	+ "predatorPopulationSize"
+);
 
 
 /*for (A_Fish f : fish) {

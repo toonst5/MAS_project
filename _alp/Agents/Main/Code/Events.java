@@ -27,9 +27,9 @@ void exportUpdate()
 {/*ALCODESTART::1780502818703*/
 exportFile.println(
 	time()
-	+ ", fishPopSize:"
+	+ "; "
 	+ fishPopulation.size()
-	+ ", predPopSize:"
+	+ "; "
 	+ predatorPopulation.size()
 )
 /*ALCODEEND*/}
