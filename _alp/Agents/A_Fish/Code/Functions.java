@@ -1,4 +1,4 @@
-A_Fish nearestFish()
+A_Fish nearestFishCluster()
 {/*ALCODESTART::1779974932861*/
 
 List<A_Fish> visible = agentsInRange(main.fishPopulation, V_visionRange);
@@ -83,5 +83,29 @@ for (A_Fish f : main.fishPopulation) {
 
 return count;*/
 
+/*ALCODEEND*/}
+
+Node nearestShelter()
+{/*ALCODESTART::1780500380710*/
+Node closestShelter = null;
+double minDist = Double.MAX_VALUE;
+
+for (Node n : main.shelter_Nodes) 
+{
+    double d = n.getNearestPoint(getX(), getY(), IV_Pointer);
+	int inside = 0;
+    for (A_Fish f : main.fishPopulation) {
+        if (n.contains(f.getX(), f.getY())) {
+            inside++;
+        }
+    }
+	
+    if (d < minDist & inside<15) {
+        minDist = d;
+        closestShelter = n;
+    }
+}
+
+return closestShelter;
 /*ALCODEEND*/}
 

@@ -168,10 +168,15 @@ IV_target = visible.isEmpty() ? null : getNearestAgent(visible);</EntryAction>
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>setSpeed(IV_defaultSpeed);
-IV_energy = 120; // depend of the fish energy?
-main.remove_fishPopulation(IV_target); // !! pointer problem!
-IV_target = null;</EntryAction>
+				<EntryAction>if(!IV_target.V_hiding)
+{
+	setSpeed(IV_defaultSpeed);
+	IV_energy = 120; // depend of the fish energy?
+	main.remove_fishPopulation(IV_target); // !! pointer problem!
+	IV_target = null;
+}
+
+</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>

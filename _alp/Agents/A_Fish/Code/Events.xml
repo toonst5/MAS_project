@@ -3,6 +3,7 @@
 	<Event>
 		<Id>1779710345943</Id>
 		<Name><![CDATA[senseEnvironment]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>20</X>
 		<Y>70</Y>
 		<Label>
@@ -67,42 +68,6 @@
 			<RecurrenceCode Class="CodeUnitValue">
 				<Code><![CDATA[1]]></Code>
 				<Unit Class="TimeUnits">HOUR</Unit>
-			</RecurrenceCode>
-			<Condition>false</Condition>
-		</Properties>
-		<Action xmlns:al="http://anylogic.com"/>
-	</Event>
-	<Event>
-		<Id>1780300381268</Id>
-		<Name><![CDATA[energyLevel]]></Name>
-		<X>20</X>
-		<Y>260</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties TriggerType="timeout" Mode="cyclic">
-			<Timeout Class="CodeUnitValue">
-				<Code><![CDATA[1]]></Code>
-				<Unit Class="TimeUnits">HOUR</Unit>
-			</Timeout>
-			<Rate Class="CodeUnitValue">
-				<Code><![CDATA[1]]></Code>
-				<Unit Class="RateUnits">PER_HOUR</Unit>
-			</Rate>
-			<Id>1780300381266</Id>
-			<OccurrenceAtTime>true</OccurrenceAtTime>
-			<OccurrenceDate>1780300800000</OccurrenceDate>
-			<OccurrenceTime Class="CodeUnitValue">
-				<Code><![CDATA[0]]></Code>
-				<Unit Class="TimeUnits">MINUTE</Unit>
-			</OccurrenceTime>
-			<RecurrenceCode Class="CodeUnitValue">
-				<Code><![CDATA[1]]></Code>
-				<Unit Class="TimeUnits">MINUTE</Unit>
 			</RecurrenceCode>
 			<Condition>false</Condition>
 		</Properties>

@@ -4,7 +4,7 @@
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>A_Fish</ReturnType>
 		<Id>1779974932861</Id>
-		<Name><![CDATA[nearestFish]]></Name>
+		<Name><![CDATA[nearestFishCluster]]></Name>
 		<X>20</X>
 		<Y>130</Y>
 		<Label>
@@ -61,6 +61,22 @@
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Node</ReturnType>
+		<Id>1780500380710</Id>
+		<Name><![CDATA[nearestShelter]]></Name>
+		<X>20</X>
+		<Y>210</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
