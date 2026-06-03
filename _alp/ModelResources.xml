@@ -7,8 +7,8 @@
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
-		<Id>1780503107905</Id>
-		<Path>exportFile.txt</Path>
+		<Id>1780505220122</Id>
+		<Path>exportFile.csv</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>

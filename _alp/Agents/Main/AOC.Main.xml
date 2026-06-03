@@ -150,7 +150,7 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 			<Url/>
 			<ResourceReference>
 				<PackageName>mas_project</PackageName>
-				<ClassName>exportFile.txt</ClassName>
+				<ClassName>exportFile.csv</ClassName>
 			</ResourceReference>
 			<FileMode>WRITE</FileMode>
 			<CharsetName>null</CharsetName>
