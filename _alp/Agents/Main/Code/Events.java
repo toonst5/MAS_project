@@ -8,7 +8,7 @@ void event()
 
 
 for (ShapeRectangle n : this.food_Nodes) {
-	if(n.getWidth()<200)
+	if(n.getWidth()<100)
 	{
 		n.setSize(
 		    n.getWidth() + 10,

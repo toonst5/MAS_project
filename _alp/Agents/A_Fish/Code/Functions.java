@@ -74,3 +74,48 @@ return count;
 
 /*ALCODEEND*/}
 
+ShapeRectangle nearestFood1()
+{/*ALCODESTART::1780500372455*/
+
+ShapeRectangle closestFood = null;
+double minDist = Double.MAX_VALUE;
+
+for (ShapeRectangle n : main.food_Nodes) {
+    // only consider open food nodes
+    if (n.getWidth() > 30) {//n.isOpen()
+        double d = distanceTo(n.getCenter().x, n.getCenter().y);
+
+        if (d < minDist) {
+            minDist = d;
+            closestFood = n;
+        }
+    }
+}
+
+return closestFood;
+/*ALCODEEND*/}
+
+Node nearestShelter()
+{/*ALCODESTART::1780500380710*/
+Node closestShelter = null;
+double minDist = Double.MAX_VALUE;
+
+for (Node n : main.shelter_Nodes) 
+{
+    double d = n.getNearestPoint(getX(), getY(), IV_Pointer);
+	int inside = 0;
+    for (A_Fish f : main.fishPopulation) {
+        if (n.contains(f.getX(), f.getY())) {
+            inside++;
+        }
+    }
+	
+    if (d < minDist && inside<15) {
+        minDist = d;
+        closestShelter = n;
+    }
+}
+
+return closestShelter;
+/*ALCODEEND*/}
+

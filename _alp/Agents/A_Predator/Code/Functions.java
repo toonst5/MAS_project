@@ -8,7 +8,7 @@ if (main != null)
 	
 	for (A_Fish f : main.fishPopulation) {
         double d = distanceTo(f);
-        if (d < bestDist) {
+        if (d < bestDist && !f.V_hiding) {
             bestDist = d;
             nearest = f;
 	    }

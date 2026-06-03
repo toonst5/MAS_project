@@ -198,7 +198,8 @@ IV_foodTarget.setPos(
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>stop()</EntryAction>
+				<EntryAction>V_hiding = true;
+fishVisual.setVisible(false);</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -250,10 +251,9 @@ if (count &gt; 0) {
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>if(IV_energy &gt; 50) {
-    A_Fish baby = main.add_fishPopulation();
-    //baby.setXY(getX(), getY());
-    IV_energy -= 20;
+				<EntryAction>if(IV_energy &gt; 70) {
+    main.add_fishPopulation();
+    IV_energy -= 50;
 }</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -310,7 +310,7 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_energy &lt;= 50
+				<Condition>IV_energy &lt;= 90
 &amp;&amp;  IV_foodTarget!= null// &amp;&amp; IV_nearestFood != null 
 //&amp;&amp; distanceTo(IV_nearestFood) &lt; V_visionRange</Condition>
 				<Rate Class="CodeUnitValue">
@@ -394,7 +394,7 @@ if (count &gt; 0) {
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>IV_nearestPredator != null 
-&amp;&amp; distanceTo(IV_nearestPredator) &lt; (V_visionRange*0.1)</Condition>
+&amp;&amp; distanceTo(IV_nearestPredator) &lt; (V_visionRange*0.5)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -434,7 +434,7 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_nearestShelter != null &amp;&amp;	distanceTo(IV_nearestShelter) &lt; 2</Condition>
+				<Condition>IV_nearestShelter != null &amp;&amp;	IV_nearestShelter.getNearestPoint(getX(), getY(), IV_Pointer) &lt; 2</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -474,7 +474,7 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>(IV_energy &gt; 90 
+				<Condition>((IV_energy &gt; 90 
 &amp;&amp; IV_nearestFish != null 
 &amp;&amp; IV_nearestFish != this
 &amp;&amp; main.fishPopulation.contains(IV_nearestFish))
@@ -482,7 +482,9 @@ if (count &gt; 0) {
 (IV_nearestFish != null
 &amp;&amp; IV_nearestFish != this
 &amp;&amp; countNeighbors() &lt; V_schoolingSize
-&amp;&amp; IV_energy &gt; 50)</Condition>
+&amp;&amp; IV_energy &gt; 50))
+&amp;&amp;(IV_nearestPredator == null 
+|| distanceTo(IV_nearestPredator) &gt;= (V_visionRange*0.5))</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -523,8 +525,7 @@ if (count &gt; 0) {
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>IV_nearestFish!=null
-&amp;&amp; !main.fishPopulation.contains(IV_nearestFish)
-&amp;&amp;distanceTo(IV_nearestFish) &lt; 2 &amp;&amp; IV_energy &gt; 60 </Condition>
+&amp;&amp;distanceTo(IV_nearestFish) &lt; 2 &amp;&amp; IV_energy &gt; 70 </Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -571,13 +572,13 @@ if (count &gt; 0) {
 				</Point>
 			</Points>
 			<IconOffset>10.0</IconOffset>
-			<Properties Source="1779707948777" Target="1779707108052" Trigger="arrival">
+			<Properties Source="1779707948777" Target="1779707108052" Trigger="condition">
 				<Action>moveTo(main.oceanNode.randomPointInside());</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>true</Condition>
+				<Condition>IV_energy&gt;200 || IV_foodTarget == null</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -625,6 +626,8 @@ if (count &gt; 0) {
 			</Points>
 			<IconOffset>10.0</IconOffset>
 			<Properties Source="1779707958428" Target="1779707108052" Trigger="condition">
+				<Action>V_hiding = false;
+fishVisual.setVisible(true);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -830,6 +833,103 @@ if (count &gt; 0) {
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780506756089</Id>
+			<Name><![CDATA[transition13]]></Name>
+			<X>450</X>
+			<Y>290</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-50</Y>
+				</Point>
+				<Point>
+					<X>20</X>
+					<Y>-70</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1779707953649" Target="1779707108052" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780507084591</Id>
+			<Name><![CDATA[transition12]]></Name>
+			<X>320</X>
+			<Y>400</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-20</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-30</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-10</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1779707948777" Target="1779707948777" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>IV_foodTarget!= null &amp;&amp; IV_foodTarget.contains(getX(), getY())
+</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>

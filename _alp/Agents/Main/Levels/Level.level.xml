@@ -120,15 +120,15 @@
 			<AngleZ>0</AngleZ>
 			<SlopeType>angle</SlopeType>
 		</Slope>
-		<Width>1160</Width>
-		<Height>720</Height>
+		<Width>1060</Width>
+		<Height>940</Height>
 		<Rotation>0.0</Rotation>
 	</RectangleNode>
 	<Rectangle>
 		<Id>1780383664614</Id>
 		<Name><![CDATA[food2]]></Name>
-		<X>740</X>
-		<Y>500</Y>
+		<X>680</X>
+		<Y>720</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -2352,8 +2352,8 @@
 	<Rectangle>
 		<Id>1780413485206</Id>
 		<Name><![CDATA[food3]]></Name>
-		<X>680</X>
-		<Y>100</Y>
+		<X>880</X>
+		<Y>80</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -2377,9 +2377,9 @@
 	</Rectangle>
 	<PolygonNode>
 		<Id>1780417497412</Id>
-		<Name><![CDATA[shelter]]></Name>
-		<X>-160</X>
-		<Y>335</Y>
+		<Name><![CDATA[shelter1]]></Name>
+		<X>960</X>
+		<Y>800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2528,7 +2528,7 @@
 		<Sloped>false</Sloped>
 		<Slope>
 			<Id>1780417497410</Id>
-			<Name><![CDATA[shelter]]></Name>
+			<Name><![CDATA[shelter1]]></Name>
 			<X>0</X>
 			<Y>10</Y>
 			<PublicFlag>false</PublicFlag>
@@ -2547,45 +2547,923 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>10</X>
-				<Y>15</Y>
+				<X>6.41</X>
+				<Y>8.385</Y>
 			</Point>
 			<Point>
-				<X>45</X>
-				<Y>15</Y>
+				<X>28.846</X>
+				<Y>8.385</Y>
 			</Point>
 			<Point>
-				<X>55</X>
+				<X>35.257</X>
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>50</X>
-				<Y>-10</Y>
+				<X>32.052</X>
+				<Y>-5.59</Y>
 			</Point>
 			<Point>
-				<X>40</X>
-				<Y>-15</Y>
+				<X>25.641</X>
+				<Y>-8.385</Y>
 			</Point>
 			<Point>
-				<X>40</X>
-				<Y>-25</Y>
+				<X>25.641</X>
+				<Y>-13.974</Y>
 			</Point>
 			<Point>
-				<X>30</X>
-				<Y>-40</Y>
+				<X>19.231</X>
+				<Y>-22.359</Y>
 			</Point>
 			<Point>
-				<X>15</X>
-				<Y>-25</Y>
+				<X>9.615</X>
+				<Y>-13.974</Y>
 			</Point>
 			<Point>
 				<X>0</X>
-				<Y>-25</Y>
+				<Y>-13.974</Y>
 			</Point>
 			<Point>
-				<X>10</X>
-				<Y>-5</Y>
+				<X>6.41</X>
+				<Y>-2.795</Y>
 			</Point>
 		</Points>
 	</PolygonNode>
+	<PolygonNode>
+		<Id>1780500221157</Id>
+		<Name><![CDATA[shelter2]]></Name>
+		<X>200</X>
+		<Y>920</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<EmbeddedObject>
+			<Id>1780500221162</Id>
+			<ActiveObjectClass>
+				<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+				<ClassName>AreaNodeDescriptor</ClassName>
+			</ActiveObjectClass>
+			<GenericParameterSubstitute>
+				<GenericParameterSubstituteReference>
+					<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+					<ClassName>AreaNodeDescriptor</ClassName>
+					<ItemName>1574694148121</ItemName>
+				</GenericParameterSubstituteReference>
+			</GenericParameterSubstitute>
+			<Parameters>
+				<Parameter>
+					<Name><![CDATA[appliedClass]]></Name>
+					<Value Class="EntityCodeValue">
+						<IsAgentEntity>false</IsAgentEntity>
+						<EntityEmbeddedObject>
+							<Id>1780417535152</Id>
+							<ActiveObjectClass>
+								<PackageName>mas_project</PackageName>
+								<ClassName>A_Fish</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>mas_project</PackageName>
+									<ClassName>A_Fish</ClassName>
+									<ItemName>1779703153033</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters/>
+							<ReplicationFlag>true</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1780417535153</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EntityEmbeddedObject>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[speedRestricted]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[maxSpeed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestricted]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionType]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionCondition]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[capacity]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[25]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[throughput]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[schedule]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[avoidedIfClosed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnter]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnterDenied]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onExit]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onOpen]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onClose]]></Name>
+				</Parameter>
+			</Parameters>
+			<ReplicationFlag>false</ReplicationFlag>
+			<Replication Class="CodeValue">
+				<Code><![CDATA[100]]></Code>
+			</Replication>
+			<CollectionType>ARRAY_LIST_BASED</CollectionType>
+			<InitialLocationType>XYZ</InitialLocationType>
+			<ColumnCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</ColumnCode>
+			<RowCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</RowCode>
+			<LocationNameCode Class="CodeValue">
+				<Code><![CDATA[""]]></Code>
+			</LocationNameCode>
+			<InitializationType>SPECIFIED_NUMBER</InitializationType>
+			<InitializationDatabaseTableQuery>
+				<Id>1780500221161</Id>
+				<TableReference/>
+			</InitializationDatabaseTableQuery>
+			<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+			<QuantityColumn/>
+		</EmbeddedObject>
+		<LineColor>-16777216</LineColor>
+		<FillColor>-8355712</FillColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillMaterial>null</FillMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<AttractorsLayout>random</AttractorsLayout>
+		<Sloped>false</Sloped>
+		<Slope>
+			<Id>1780500221155</Id>
+			<Name><![CDATA[shelter2]]></Name>
+			<X>0</X>
+			<Y>10</Y>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Dx>20</Dx>
+			<Dy>0</Dy>
+			<Dz>0</Dz>
+			<AngleX>30</AngleX>
+			<AngleZ>0</AngleZ>
+			<SlopeType>angle</SlopeType>
+		</Slope>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>28.846</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>35.257</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>32.052</X>
+				<Y>-6.308</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-9.462</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>19.231</X>
+				<Y>-25.231</Y>
+			</Point>
+			<Point>
+				<X>9.615</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>-3.154</Y>
+			</Point>
+		</Points>
+	</PolygonNode>
+	<PolygonNode>
+		<Id>1780500254707</Id>
+		<Name><![CDATA[shelter3]]></Name>
+		<X>880</X>
+		<Y>280</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<EmbeddedObject>
+			<Id>1780500254712</Id>
+			<ActiveObjectClass>
+				<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+				<ClassName>AreaNodeDescriptor</ClassName>
+			</ActiveObjectClass>
+			<GenericParameterSubstitute>
+				<GenericParameterSubstituteReference>
+					<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+					<ClassName>AreaNodeDescriptor</ClassName>
+					<ItemName>1574694148121</ItemName>
+				</GenericParameterSubstituteReference>
+			</GenericParameterSubstitute>
+			<Parameters>
+				<Parameter>
+					<Name><![CDATA[appliedClass]]></Name>
+					<Value Class="EntityCodeValue">
+						<IsAgentEntity>false</IsAgentEntity>
+						<EntityEmbeddedObject>
+							<Id>1780417535152</Id>
+							<ActiveObjectClass>
+								<PackageName>mas_project</PackageName>
+								<ClassName>A_Fish</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>mas_project</PackageName>
+									<ClassName>A_Fish</ClassName>
+									<ItemName>1779703153033</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters/>
+							<ReplicationFlag>true</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1780417535153</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EntityEmbeddedObject>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[speedRestricted]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[maxSpeed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestricted]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionType]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionCondition]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[capacity]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[25]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[throughput]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[schedule]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[avoidedIfClosed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnter]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnterDenied]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onExit]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onOpen]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onClose]]></Name>
+				</Parameter>
+			</Parameters>
+			<ReplicationFlag>false</ReplicationFlag>
+			<Replication Class="CodeValue">
+				<Code><![CDATA[100]]></Code>
+			</Replication>
+			<CollectionType>ARRAY_LIST_BASED</CollectionType>
+			<InitialLocationType>XYZ</InitialLocationType>
+			<ColumnCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</ColumnCode>
+			<RowCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</RowCode>
+			<LocationNameCode Class="CodeValue">
+				<Code><![CDATA[""]]></Code>
+			</LocationNameCode>
+			<InitializationType>SPECIFIED_NUMBER</InitializationType>
+			<InitializationDatabaseTableQuery>
+				<Id>1780500254711</Id>
+				<TableReference/>
+			</InitializationDatabaseTableQuery>
+			<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+			<QuantityColumn/>
+		</EmbeddedObject>
+		<LineColor>-16777216</LineColor>
+		<FillColor>-8355712</FillColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillMaterial>null</FillMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<AttractorsLayout>random</AttractorsLayout>
+		<Sloped>false</Sloped>
+		<Slope>
+			<Id>1780500254705</Id>
+			<Name><![CDATA[shelter3]]></Name>
+			<X>0</X>
+			<Y>10</Y>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Dx>20</Dx>
+			<Dy>0</Dy>
+			<Dz>0</Dz>
+			<AngleX>30</AngleX>
+			<AngleZ>0</AngleZ>
+			<SlopeType>angle</SlopeType>
+		</Slope>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>28.846</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>35.257</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>32.052</X>
+				<Y>-6.308</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-9.462</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>19.231</X>
+				<Y>-25.231</Y>
+			</Point>
+			<Point>
+				<X>9.615</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>-3.154</Y>
+			</Point>
+		</Points>
+	</PolygonNode>
+	<PolygonNode>
+		<Id>1780500269408</Id>
+		<Name><![CDATA[shelter4]]></Name>
+		<X>1040</X>
+		<Y>720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<EmbeddedObject>
+			<Id>1780500269413</Id>
+			<ActiveObjectClass>
+				<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+				<ClassName>AreaNodeDescriptor</ClassName>
+			</ActiveObjectClass>
+			<GenericParameterSubstitute>
+				<GenericParameterSubstituteReference>
+					<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+					<ClassName>AreaNodeDescriptor</ClassName>
+					<ItemName>1574694148121</ItemName>
+				</GenericParameterSubstituteReference>
+			</GenericParameterSubstitute>
+			<Parameters>
+				<Parameter>
+					<Name><![CDATA[appliedClass]]></Name>
+					<Value Class="EntityCodeValue">
+						<IsAgentEntity>false</IsAgentEntity>
+						<EntityEmbeddedObject>
+							<Id>1780417535152</Id>
+							<ActiveObjectClass>
+								<PackageName>mas_project</PackageName>
+								<ClassName>A_Fish</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>mas_project</PackageName>
+									<ClassName>A_Fish</ClassName>
+									<ItemName>1779703153033</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters/>
+							<ReplicationFlag>true</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1780417535153</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EntityEmbeddedObject>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[speedRestricted]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[maxSpeed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestricted]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionType]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionCondition]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[capacity]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[25]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[throughput]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[schedule]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[avoidedIfClosed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnter]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnterDenied]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onExit]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onOpen]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onClose]]></Name>
+				</Parameter>
+			</Parameters>
+			<ReplicationFlag>false</ReplicationFlag>
+			<Replication Class="CodeValue">
+				<Code><![CDATA[100]]></Code>
+			</Replication>
+			<CollectionType>ARRAY_LIST_BASED</CollectionType>
+			<InitialLocationType>XYZ</InitialLocationType>
+			<ColumnCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</ColumnCode>
+			<RowCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</RowCode>
+			<LocationNameCode Class="CodeValue">
+				<Code><![CDATA[""]]></Code>
+			</LocationNameCode>
+			<InitializationType>SPECIFIED_NUMBER</InitializationType>
+			<InitializationDatabaseTableQuery>
+				<Id>1780500269412</Id>
+				<TableReference/>
+			</InitializationDatabaseTableQuery>
+			<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+			<QuantityColumn/>
+		</EmbeddedObject>
+		<LineColor>-16777216</LineColor>
+		<FillColor>-8355712</FillColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillMaterial>null</FillMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<AttractorsLayout>random</AttractorsLayout>
+		<Sloped>false</Sloped>
+		<Slope>
+			<Id>1780500269406</Id>
+			<Name><![CDATA[shelter4]]></Name>
+			<X>0</X>
+			<Y>10</Y>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Dx>20</Dx>
+			<Dy>0</Dy>
+			<Dz>0</Dz>
+			<AngleX>30</AngleX>
+			<AngleZ>0</AngleZ>
+			<SlopeType>angle</SlopeType>
+		</Slope>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>28.846</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>35.257</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>32.052</X>
+				<Y>-6.308</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-9.462</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>19.231</X>
+				<Y>-25.231</Y>
+			</Point>
+			<Point>
+				<X>9.615</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>-3.154</Y>
+			</Point>
+		</Points>
+	</PolygonNode>
+	<PolygonNode>
+		<Id>1780500272416</Id>
+		<Name><![CDATA[shelter5]]></Name>
+		<X>1040</X>
+		<Y>120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Z>0</Z>
+		<EmbeddedObject>
+			<Id>1780500272421</Id>
+			<ActiveObjectClass>
+				<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+				<ClassName>AreaNodeDescriptor</ClassName>
+			</ActiveObjectClass>
+			<GenericParameterSubstitute>
+				<GenericParameterSubstituteReference>
+					<PackageName>com.anylogic.libraries.modules.markup_descriptors</PackageName>
+					<ClassName>AreaNodeDescriptor</ClassName>
+					<ItemName>1574694148121</ItemName>
+				</GenericParameterSubstituteReference>
+			</GenericParameterSubstitute>
+			<Parameters>
+				<Parameter>
+					<Name><![CDATA[appliedClass]]></Name>
+					<Value Class="EntityCodeValue">
+						<IsAgentEntity>false</IsAgentEntity>
+						<EntityEmbeddedObject>
+							<Id>1780417535152</Id>
+							<ActiveObjectClass>
+								<PackageName>mas_project</PackageName>
+								<ClassName>A_Fish</ClassName>
+							</ActiveObjectClass>
+							<GenericParameterSubstitute>
+								<GenericParameterSubstituteReference>
+									<PackageName>mas_project</PackageName>
+									<ClassName>A_Fish</ClassName>
+									<ItemName>1779703153033</ItemName>
+								</GenericParameterSubstituteReference>
+							</GenericParameterSubstitute>
+							<Parameters/>
+							<ReplicationFlag>true</ReplicationFlag>
+							<Replication Class="CodeValue">
+								<Code><![CDATA[100]]></Code>
+							</Replication>
+							<CollectionType>ARRAY_LIST_BASED</CollectionType>
+							<InitialLocationType>XYZ</InitialLocationType>
+							<ColumnCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</ColumnCode>
+							<RowCode Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</RowCode>
+							<LocationNameCode Class="CodeValue">
+								<Code><![CDATA[""]]></Code>
+							</LocationNameCode>
+							<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+							<InitializationDatabaseTableQuery>
+								<Id>1780417535153</Id>
+								<TableReference/>
+							</InitializationDatabaseTableQuery>
+							<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+							<QuantityColumn/>
+						</EntityEmbeddedObject>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[speedRestricted]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[maxSpeed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestricted]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[true]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionType]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[accessRestrictionCondition]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[capacity]]></Name>
+					<Value Class="CodeValue">
+						<Code><![CDATA[25]]></Code>
+					</Value>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[throughput]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[schedule]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[avoidedIfClosed]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnter]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onEnterDenied]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onExit]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onOpen]]></Name>
+				</Parameter>
+				<Parameter>
+					<Name><![CDATA[onClose]]></Name>
+				</Parameter>
+			</Parameters>
+			<ReplicationFlag>false</ReplicationFlag>
+			<Replication Class="CodeValue">
+				<Code><![CDATA[100]]></Code>
+			</Replication>
+			<CollectionType>ARRAY_LIST_BASED</CollectionType>
+			<InitialLocationType>XYZ</InitialLocationType>
+			<ColumnCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</ColumnCode>
+			<RowCode Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</RowCode>
+			<LocationNameCode Class="CodeValue">
+				<Code><![CDATA[""]]></Code>
+			</LocationNameCode>
+			<InitializationType>SPECIFIED_NUMBER</InitializationType>
+			<InitializationDatabaseTableQuery>
+				<Id>1780500272420</Id>
+				<TableReference/>
+			</InitializationDatabaseTableQuery>
+			<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+			<QuantityColumn/>
+		</EmbeddedObject>
+		<LineColor>-16777216</LineColor>
+		<FillColor>-8355712</FillColor>
+		<LineWidth>2</LineWidth>
+		<LineMaterial>null</LineMaterial>
+		<FillMaterial>null</FillMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<AttractorsLayout>random</AttractorsLayout>
+		<Sloped>false</Sloped>
+		<Slope>
+			<Id>1780500272414</Id>
+			<Name><![CDATA[shelter5]]></Name>
+			<X>0</X>
+			<Y>10</Y>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Dx>20</Dx>
+			<Dy>0</Dy>
+			<Dz>0</Dz>
+			<AngleX>30</AngleX>
+			<AngleZ>0</AngleZ>
+			<SlopeType>angle</SlopeType>
+		</Slope>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>28.846</X>
+				<Y>9.462</Y>
+			</Point>
+			<Point>
+				<X>35.257</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>32.052</X>
+				<Y>-6.308</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-9.462</Y>
+			</Point>
+			<Point>
+				<X>25.641</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>19.231</X>
+				<Y>-25.231</Y>
+			</Point>
+			<Point>
+				<X>9.615</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>0</X>
+				<Y>-15.769</Y>
+			</Point>
+			<Point>
+				<X>6.41</X>
+				<Y>-3.154</Y>
+			</Point>
+		</Points>
+	</PolygonNode>
+	<Text>
+		<Id>1780507562982</Id>
+		<Name><![CDATA[fishPopulationText]]></Name>
+		<X>80</X>
+		<Y>20</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[text]]></Text>
+		<TextCode>fishPopulation.size()</TextCode>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>72</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
 </Presentation>
