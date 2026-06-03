@@ -3,6 +3,7 @@
 	<Event>
 		<Id>1779710345943</Id>
 		<Name><![CDATA[senseEnvironment]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>20</X>
 		<Y>70</Y>
 		<Label>

@@ -86,7 +86,7 @@
 				<Rotation>90.0</Rotation>
 				<Color>-65536</Color>
 				<Text/>
-				<TextCode>statechart.getState()</TextCode>
+				<TextCode>fish_behavior.getState()</TextCode>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>10</Size>

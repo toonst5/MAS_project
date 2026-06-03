@@ -3,7 +3,7 @@ void ShipSinks()
 shipClass.setVisible(true);
 /*ALCODEEND*/}
 
-void event()
+void food_growth()
 {/*ALCODESTART::1780414200953*/
 
 
@@ -11,13 +11,13 @@ for (ShapeRectangle n : this.food_Nodes) {
 	if(n.getWidth()<100)
 	{
 		n.setSize(
-		    n.getWidth() + 10,
-		    n.getHeight() + 10
+		    n.getWidth() + 6,
+		    n.getHeight() + 6
 		);
 		
 		n.setPos(
-		    n.getX() - 5,
-		    n.getY() - 5
+		    n.getX() - 3,
+		    n.getY() - 3
 		);
 	}
 }
