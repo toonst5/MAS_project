@@ -142,6 +142,10 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 			<ShowLabel>true</ShowLabel>
 			<FileType>FILE</FileType>
 			<Url/>
+			<ResourceReference>
+				<PackageName>mas_project</PackageName>
+				<ClassName>exportFile.txt</ClassName>
+			</ResourceReference>
 			<FileMode>WRITE</FileMode>
 			<CharsetName>null</CharsetName>
 			<Separators/>

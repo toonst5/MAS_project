@@ -92,6 +92,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1780433144744</Id>
 		<Name><![CDATA[IV_target]]></Name>
+		<Description><![CDATA[nearest fish within a visibility range]]></Description>
 		<X>30</X>
 		<Y>170</Y>
 		<Label>

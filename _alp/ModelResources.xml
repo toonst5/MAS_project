@@ -6,4 +6,10 @@
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
+	<Resource>
+		<Id>1780503107905</Id>
+		<Path>exportFile.txt</Path>
+		<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		<Location>FILE_SYSTEM</Location>
+	</Resource>
 </ModelResources>
