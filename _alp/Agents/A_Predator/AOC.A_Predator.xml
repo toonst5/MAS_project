@@ -132,7 +132,9 @@ moveTo(p.x, p.y);</EntryAction>
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>IV_target = nearestFishNaive();</EntryAction>
+				<EntryAction>//IV_target = nearestFishNaive();
+List&lt;A_Fish&gt; visible = agentsInRange(main.fishPopulation, IV_visionRange);
+IV_target = visible.isEmpty() ? null : getNearestAgent(visible);</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -612,7 +614,6 @@ visionRangeCircle.setRadius(IV_visionRange);
 		</StatechartElement>
 	</StatechartElements>
 	<Events xmlns:al="http://anylogic.com"/>
-	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1779952911830</Id>

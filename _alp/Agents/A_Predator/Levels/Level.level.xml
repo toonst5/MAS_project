@@ -3,7 +3,7 @@
 	<Image>
 		<Id>1780432666333</Id>
 		<Name><![CDATA[sharkImage]]></Name>
-		<X>-75</X>
+		<X>-90</X>
 		<Y>-50</Y>
 		<Label>
 			<X>0</X>
@@ -50,6 +50,59 @@
 		<RadiusY>40</RadiusY>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+	</Oval>
+	<Text>
+		<Id>1780501431899</Id>
+		<Name><![CDATA[energy]]></Name>
+		<X>-10</X>
+		<Y>-25</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[text]]></Text>
+		<TextCode>IV_energy
+</TextCode>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>10</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Oval>
+		<Id>1780501481996</Id>
+		<Name><![CDATA[oval]]></Name>
+		<X>0</X>
+		<Y>0</Y>
+		<Label>
+			<X>0</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>1</LineWidth>
+		<LineColor>-16777216</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<RadiusX>5</RadiusX>
+		<RadiusY>40</RadiusY>
+		<Rotation>0.0</Rotation>
+		<FillColor>-16776961</FillColor>
 		<FillMaterial>null</FillMaterial>
 	</Oval>
 </Presentation>

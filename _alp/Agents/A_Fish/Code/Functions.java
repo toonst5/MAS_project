@@ -1,7 +1,11 @@
 A_Fish nearestFishCluster()
 {/*ALCODESTART::1779974932861*/
 
-A_Fish nearest = null;
+List<A_Fish> visible = agentsInRange(main.fishPopulation, V_visionRange);
+return visible.isEmpty() ? null : getNearestAgent(visible);
+
+/*** Naive code ***/
+/*A_Fish nearest = null;
 if (main != null)
 {
 	double bestDist = Double.MAX_VALUE;
@@ -16,13 +20,16 @@ if (main != null)
 	    }
 	}
 }
-return nearest;
+return nearest;*/
 /*ALCODEEND*/}
 
 A_Predator nearestPredator()
 {/*ALCODESTART::1779981412507*/
+List<A_Predator> visible = agentsInRange(main.predatorPopulation, V_visionRange);
+return visible.isEmpty() ? null : getNearestAgent(visible);
 
-A_Predator nearest = null;
+/*** Naive code ***/
+/*A_Predator nearest = null;
 if (main != null)
 {
 	double bestDist = Double.MAX_VALUE;
@@ -35,7 +42,7 @@ if (main != null)
 	    }
 	}
 }
-return nearest;
+return nearest;*/
 /*ALCODEEND*/}
 
 ShapeRectangle nearestFood()
@@ -62,7 +69,11 @@ return closestFood;
 double countNeighbors()
 {/*ALCODESTART::1780148179430*/
 
-int count = 0;
+List<A_Fish> visible = agentsInRange(main.fishPopulation, V_schoolingRange);
+return visible.size();
+
+/*** Naive code ***/
+/*int count = 0;
 
 for (A_Fish f : main.fishPopulation) {
     if (f != this && distanceTo(f) < V_schoolingRange) {
@@ -70,7 +81,7 @@ for (A_Fish f : main.fishPopulation) {
     }
 }
 
-return count;
+return count;*/
 
 /*ALCODEEND*/}
 
