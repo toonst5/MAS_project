@@ -45,46 +45,102 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+<<<<<<< HEAD
 		<Id>1780558438591</Id>
 		<Name><![CDATA[shipActive]]></Name>
 		<X>-320</X>
 		<Y>760</Y>
+=======
+		<Id>1780570187185</Id>
+		<Name><![CDATA[type1count]]></Name>
+		<X>-300</X>
+		<Y>440</Y>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
+<<<<<<< HEAD
 		<PresentationFlag>true</PresentationFlag>
+=======
+		<PresentationFlag>false</PresentationFlag>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
               AccessType="public"
               StaticVariable="false">
+<<<<<<< HEAD
 			<Type><![CDATA[boolean]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[false]]></Code>
+=======
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
+<<<<<<< HEAD
 		<Id>1780560894201</Id>
 		<Name><![CDATA[contamRadius]]></Name>
 		<X>-320</X>
 		<Y>800</Y>
+=======
+		<Id>1780570189074</Id>
+		<Name><![CDATA[type3count]]></Name>
+		<X>-300</X>
+		<Y>400</Y>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
+<<<<<<< HEAD
 		<PresentationFlag>true</PresentationFlag>
+=======
+		<PresentationFlag>false</PresentationFlag>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
               AccessType="public"
               StaticVariable="false">
+<<<<<<< HEAD
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[80]]></Code>
+=======
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780570189773</Id>
+		<Name><![CDATA[type2count]]></Name>
+		<X>-300</X>
+		<Y>420</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+>>>>>>> 53ef0d6fe06960d982b11e1aad67c52bd62d22c1
 			</InitialValue>
 		</Properties>
 	</Variable>
