@@ -9,7 +9,7 @@ IV_nearestShelter = nearestShelter();
 void lifeCycle()
 {/*ALCODESTART::1779710449694*/
 IV_age += 1;
-IV_energy -= 5;
+IV_energy -= IV_energyDrain;
 
 
 if (IV_energy <= 0 || IV_age >= V_maxAge) {
