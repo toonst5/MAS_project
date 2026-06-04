@@ -51,6 +51,12 @@
 			<Parameter>
 				<ParameterName>ACellWidth</ParameterName>
 			</Parameter>
+			<Parameter>
+				<ParameterName>shipX</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>shipY</ParameterName>
+			</Parameter>
 		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>

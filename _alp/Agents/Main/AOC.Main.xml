@@ -4,14 +4,7 @@
 	<Name><![CDATA[Main]]></Name>
 	<StartupCode><![CDATA[shipClass.setVisible(false);
 
-double shipW = 120;
-double shipH = 100;
 
-double shipX = oceanNode.getX() + shipW+ uniform(0, oceanNode.getWidth() -  2* shipW);
-double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* shipH);
-
-//Point p = oceanNode.randomPointInside();
-shipClass.setPos(shipX, shipY);
 
 exportFile.println(
 	"time"
@@ -22,24 +15,16 @@ exportFile.println(
 );
 
 
-/*for (A_Fish f : fish) {
-	double Fx = oceanNode.getX() + 8 
-             + uniform(0, oceanNode.getWidth() - 2 * 8);
-    double Fy = oceanNode.getY() + 5 
-             + uniform(0, oceanNode.getHeight() - 2 * 5);
-             f.setXY(Fx, Fy);
-	}
-	
 
-for (A_Predator pre : predator) {
-	double Px = oceanNode.getX() + 12
-             + uniform(0, oceanNode.getWidth() - 2 * 12);
-    double Py = oceanNode.getY() + 8 
-             + uniform(0, oceanNode.getHeight() - 2 * 8);
-             pre.setXY(Px, Py);
-	}
-*/
-ShipSinks.restart(uniform(1, 50));]]></StartupCode>
+
+//shipwreck causes
+double killRadius = 40;
+double avoidRadius = 70;
+double contamRadius = 80;
+
+ShipSinks.restart(uniform(1, 30));
+
+]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1779214914772</Id>
@@ -133,6 +118,7 @@ ShipSinks.restart(uniform(1, 50));]]></StartupCode>
 	<ConnectionsId>1779214914768</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Events xmlns:al="http://anylogic.com"/>
+	<Functions xmlns:al="http://anylogic.com"/>
 	<Connectivity>
 		<TextFile>
 			<Id>1780502799298</Id>

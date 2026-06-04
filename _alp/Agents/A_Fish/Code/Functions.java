@@ -53,7 +53,7 @@ double minDist = Double.MAX_VALUE;
 
 for (ShapeRectangle n : main.food_Nodes) {
     // only consider open food nodes
-    if (n.getWidth() > 30) {//n.isOpen()
+    if (n.getWidth() > 30 && !main.isFoodContaminated(n)) {//n.isOpen()
         double d = distanceTo(n.getCenter().x, n.getCenter().y);
 
         if (d < minDist) {
