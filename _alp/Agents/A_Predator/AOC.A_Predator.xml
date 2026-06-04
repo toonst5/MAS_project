@@ -134,7 +134,15 @@ moveTo(p.x, p.y);</EntryAction>
 			<Properties Width="100" Height="30">
 				<EntryAction>//IV_target = nearestFishNaive();
 List&lt;A_Fish&gt; visible = agentsInRange(main.fishPopulation, IV_visionRange);
-IV_target = visible.isEmpty() ? null : getNearestAgent(visible);</EntryAction>
+
+// getting the nearest one
+//IV_target = visible.isEmpty() ? null : getNearestAgent(visible);
+// with the hiding condition:
+IV_target = visible.stream()
+    .filter(a -&gt; !((A_Fish) a).V_hiding)
+    .min(Comparator.comparingDouble(a -&gt; ((A_Fish) a).distanceTo(this)))
+    .orElse(null);
+</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -574,7 +582,7 @@ visionRangeCircle.setRadius(IV_visionRange);
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1780435346585</Id>
 			<Name><![CDATA[transition8]]></Name>
-			<X>210</X>
+			<X>220</X>
 			<Y>250</Y>
 			<Label>
 				<X>10</X>
@@ -600,7 +608,48 @@ visionRangeCircle.setRadius(IV_visionRange);
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>!main.fishPopulation.contains(IV_target)</Condition>
+				<Condition>!main.fishPopulation.contains(IV_target)
+|| IV_target.V_hiding == true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780558519475</Id>
+			<Name><![CDATA[transition9]]></Name>
+			<X>200</X>
+			<Y>250</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-50</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780433097759" Target="1780433003242" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[24]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
