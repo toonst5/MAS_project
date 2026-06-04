@@ -30,6 +30,12 @@ exportFile.println(
 	+ "; "
 	+ fishPopulation.size()
 	+ "; "
+	+ type1count
+	+ "; "
+	+ type2count
+	+ "; "
+	+ type3count
+	+ "; "
 	+ predatorPopulation.size()
 )
 /*ALCODEEND*/}
