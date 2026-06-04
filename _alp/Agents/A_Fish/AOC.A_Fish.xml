@@ -348,7 +348,11 @@ if (count &gt; 0) {
 				<EntryAction>if(IV_energy &gt; 70) {
     A_Fish f=main.add_fishPopulation();
     IV_energy -= 50;
-    f.V_type=V_type;
+    if(uniform_discr(0, 1)&gt;0.1)//mutation chance
+    {
+    	f.V_type=V_type;
+    }
+    f.jumpTo(getX(), getY());
 }</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
