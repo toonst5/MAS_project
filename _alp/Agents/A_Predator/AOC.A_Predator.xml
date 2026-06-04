@@ -377,7 +377,7 @@ visionRangeCircle.setRadius(IV_visionRange);
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780433097759" Target="1780433097759" Trigger="rate">
+			<Properties Source="1780433097759" Target="1780433097759" Trigger="arrival">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
