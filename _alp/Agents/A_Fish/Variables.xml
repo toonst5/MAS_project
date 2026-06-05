@@ -59,7 +59,7 @@
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[uniform(80, 120)]]></Code>
+				<Code><![CDATA[80 //uniform(80, 120)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -255,7 +255,7 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[ShapeRectangle]]></Type>
+			<Type><![CDATA[A_Food]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[null]]></Code>
 			</InitialValue>

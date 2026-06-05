@@ -46,10 +46,7 @@ presentation.add(shipLevel);
 
 //double nodeArea = oceanNode.getWidth() * oceanNode.getHeight();
 //double nodeRate = 10.0 / nodeArea;
-spawnRates.add(10.);
-spawnNodes.add(oceanNode);
-
-spawnRates.add(10.);
+spawnRates.add(5.);
 spawnNodes.add(oceanNode);
 totalSpawnRate = spawnRates.stream().mapToDouble(Double::doubleValue).sum();
 

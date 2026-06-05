@@ -45,25 +45,10 @@ if (main != null)
 return nearest;*/
 /*ALCODEEND*/}
 
-ShapeRectangle nearestFood()
+A_Food nearestFood()
 {/*ALCODESTART::1779981415967*/
-
-ShapeRectangle closestFood = null;
-double minDist = Double.MAX_VALUE;
-
-for (ShapeRectangle n : main.food_Nodes) {
-    // only consider open food nodes
-    if (n.getWidth() > 30 && !main.isFoodContaminated(n)) {//n.isOpen()
-        double d = distanceTo(n.getCenter().x, n.getCenter().y);
-
-        if (d < minDist) {
-            minDist = d;
-            closestFood = n;
-        }
-    }
-}
-
-return closestFood;
+List<A_Food> visible = agentsInRange(main.foodPopulation, V_visionRange);
+return visible.isEmpty() ? null : getNearestAgent(visible);
 /*ALCODEEND*/}
 
 double countNeighbors()

@@ -143,7 +143,7 @@ moveTo(p.x, p.y);
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
 				<EntryAction>IV_energyDrain = 10;
-moveTo(IV_foodTarget.randomPointInside());
+moveTo(IV_foodTarget);
 </EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -193,15 +193,7 @@ moveTo(IV_foodTarget.randomPointInside());
 
 IV_energy += 80;
 
-IV_foodTarget.setSize(
-    IV_foodTarget.getWidth() - 2,
-    IV_foodTarget.getHeight() - 2
-);
-
-IV_foodTarget.setPos(
-    IV_foodTarget.getX() + 1,
-    IV_foodTarget.getY() + 1
-);
+main.remove_foodPopulation(IV_foodTarget);
 </EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
@@ -520,7 +512,8 @@ if (count &gt; 0) {
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_foodTarget != null</Condition>
+				<Condition>IV_foodTarget != null
+&amp;&amp; main.foodPopulation.contains(IV_foodTarget)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -698,22 +691,13 @@ IV_energyDrain = 5;</Action>
 			</Points>
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780511273121" Target="1780511355961" Trigger="timeout">
-				<Action>IV_energy += 80;
-
-IV_foodTarget.setSize(
-    IV_foodTarget.getWidth() - 2,
-    IV_foodTarget.getHeight() - 2
-);
-
-IV_foodTarget.setPos(
-    IV_foodTarget.getX() + 1,
-    IV_foodTarget.getY() + 1
-);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_foodTarget != null &amp;&amp; !main.isFoodContaminated(IV_foodTarget)</Condition>
+				<Condition>IV_foodTarget != null
+&amp;&amp; main.foodPopulation.contains(IV_foodTarget)
+//&amp;&amp; !main.isFoodContaminated(IV_foodTarget)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -760,7 +744,7 @@ IV_foodTarget.setPos(
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511355961" Target="1780511056846" Trigger="timeout">
+			<Properties Source="1780511355961" Target="1780511056846" Trigger="condition">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
