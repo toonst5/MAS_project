@@ -144,4 +144,49 @@
 		</Properties>
 		<Action xmlns:al="http://anylogic.com"/>
 	</Event>
+	<Event>
+		<Id>1780647158930</Id>
+		<Name><![CDATA[spawnFood]]></Name>
+		<Description><![CDATA[Ok,
+spawnRates and spawnNodes represent list of Nodes and rates
+The first element represent the oceanNode
+The shipNode is addede later (in the ShipShnks event)
+
+The rates are hard-written in main.startup and ShipSinks event
+
+
+]]></Description>
+		<X>20</X>
+		<Y>1070</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties TriggerType="rate" Mode="occuresOnce">
+			<Timeout Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</Timeout>
+			<Rate Class="CodeUnitValue">
+				<Code><![CDATA[totalSpawnRate]]></Code>
+				<Unit Class="RateUnits">PER_HOUR</Unit>
+			</Rate>
+			<Id>1780647158928</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1780732800000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[0]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</RecurrenceCode>
+			<Condition>false</Condition>
+		</Properties>
+		<Action xmlns:al="http://anylogic.com"/>
+	</Event>
 </Events>

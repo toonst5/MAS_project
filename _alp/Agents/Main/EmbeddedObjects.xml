@@ -107,4 +107,61 @@
 		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 		<QuantityColumn/>
 	</EmbeddedObject>
+	<EmbeddedObject>
+		<Id>1780646349398</Id>
+		<Name><![CDATA[foodPopulation]]></Name>
+		<X>-280</X>
+		<Y>670</Y>
+		<Label>
+			<X>20</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<PresentationId>1780646349400</PresentationId>
+		<ActiveObjectClass>
+			<PackageName>mas_project</PackageName>
+			<ClassName>A_Food</ClassName>
+		</ActiveObjectClass>
+		<GenericParameterSubstitute>
+			<GenericParameterSubstituteReference>
+				<PackageName>mas_project</PackageName>
+				<ClassName>A_Food</ClassName>
+				<ItemName>1780644382720</ItemName>
+			</GenericParameterSubstituteReference>
+		</GenericParameterSubstitute>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[IV_amount]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[IV_expiryTime]]></Name>
+			</Parameter>
+		</Parameters>
+		<ReplicationFlag>true</ReplicationFlag>
+		<Replication Class="CodeValue">
+			<Code><![CDATA[10 // to setup]]></Code>
+		</Replication>
+		<CollectionType>ARRAY_LIST_BASED</CollectionType>
+		<InEnvironment>true</InEnvironment>
+		<InitialLocationType>NODE</InitialLocationType>
+		<ColumnCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</ColumnCode>
+		<RowCode Class="CodeValue">
+			<Code><![CDATA[0]]></Code>
+		</RowCode>
+		<NodeCode>oceanNode</NodeCode>
+		<LocationNameCode Class="CodeValue">
+			<Code><![CDATA[""]]></Code>
+		</LocationNameCode>
+		<InitializationType>SPECIFIED_NUMBER</InitializationType>
+		<InitializationDatabaseTableQuery>
+			<Id>1780646349396</Id>
+			<TableReference/>
+		</InitializationDatabaseTableQuery>
+		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+		<QuantityColumn/>
+	</EmbeddedObject>
 </EmbeddedObjects>
