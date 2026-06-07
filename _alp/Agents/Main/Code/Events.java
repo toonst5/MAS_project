@@ -5,8 +5,14 @@ shipActive = true;
 double shipW = 120;
 double shipH = 100;
 
-double shipX = oceanNode.getX() + shipW+ uniform(0, oceanNode.getWidth() -  2* shipW);
-double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* shipH);
+food_Nodes.add(shipRectangle);
+shelter_Nodes.add(shipShelter);
+
+//double shipX = oceanNode.getX() + shipW+ uniform(0, oceanNode.getWidth() -  2* shipW);
+//double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* shipH);
+double shipX = 580;
+double shipY = 460;
+
 
 //Point p = oceanNode.randomPointInside();
 shipClass.setPos(shipX, shipY);
@@ -64,23 +70,6 @@ for (ShapeRectangle n : this.food_Nodes) {
 }
 /*ALCODEEND*/}
 
-void exportUpdate()
-{/*ALCODESTART::1780502818703*/
-exportFile.println(
-	time()
-	+ "; "
-	+ fishPopulation.size()
-	+ "; "
-	+ type1count
-	+ "; "
-	+ type2count
-	+ "; "
-	+ type3count
-	+ "; "
-	+ predatorPopulation.size()
-)
-/*ALCODEEND*/}
-
 void update_counters()
 {/*ALCODESTART::1780570266541*/
 type1count = 0;
@@ -92,6 +81,11 @@ for (A_Fish f : fishPopulation) {
     if (f.V_type == 2) type2count++;
     if (f.V_type == 3) type3count++;
 }
+
+/*ALCODEEND*/}
+
+void foodSpawn()
+{/*ALCODESTART::1780849110923*/
 
 /*ALCODEEND*/}
 

@@ -57,6 +57,9 @@
 			<Parameter>
 				<ParameterName>shipY</ParameterName>
 			</Parameter>
+			<Parameter>
+				<ParameterName>ZonesList</ParameterName>
+			</Parameter>
 		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>

@@ -180,7 +180,7 @@ IV_target = visible.stream()
 {
 	setSpeed(IV_defaultSpeed);
 	IV_energy = 120; // depend of the fish energy?
-	main.remove_fishPopulation(IV_target); // !! pointer problem!
+	main.remove_fishPopulation(IV_target, "predator"); // !! pointer problem!
 	IV_target = null;
 }
 
