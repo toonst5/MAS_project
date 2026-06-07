@@ -25,6 +25,7 @@
 		<ReturnType>ArrayList&lt;ShapeRectangle&gt;</ReturnType>
 		<Id>1780562475461</Id>
 		<Name><![CDATA[getAvailableFoodNodes]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-480</X>
 		<Y>960</Y>
 		<Label>
@@ -34,6 +35,30 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1780847745978</Id>
+		<Name><![CDATA[remove_fishPopulation]]></Name>
+		<X>-240</X>
+		<Y>1060</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[agent]]></Name>
+			<Type><![CDATA[A_Fish]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[reason]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

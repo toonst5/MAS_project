@@ -27,7 +27,7 @@
 		<Parameters/>
 		<ReplicationFlag>true</ReplicationFlag>
 		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
+			<Code><![CDATA[3]]></Code>
 		</Replication>
 		<CollectionType>ARRAY_LIST_BASED</CollectionType>
 		<InEnvironment>true</InEnvironment>
@@ -84,7 +84,7 @@
 		</Parameters>
 		<ReplicationFlag>true</ReplicationFlag>
 		<Replication Class="CodeValue">
-			<Code><![CDATA[5]]></Code>
+			<Code><![CDATA[3]]></Code>
 		</Replication>
 		<CollectionType>ARRAY_LIST_BASED</CollectionType>
 		<InEnvironment>true</InEnvironment>

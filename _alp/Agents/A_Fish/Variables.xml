@@ -87,9 +87,9 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1779707575430</Id>
-		<Name><![CDATA[V_visionRange]]></Name>
-		<X>20</X>
-		<Y>610</Y>
+		<Name><![CDATA[IV_visionRange]]></Name>
+		<X>180</X>
+		<Y>560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -325,6 +325,239 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[5]]></Code>
 			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780670760925</Id>
+		<Name><![CDATA[IV_dirX]]></Name>
+		<X>20</X>
+		<Y>720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[1]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780670770192</Id>
+		<Name><![CDATA[IV_dirY]]></Name>
+		<X>20</X>
+		<Y>740</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671497106</Id>
+		<Name><![CDATA[IV_mass]]></Name>
+		<X>180</X>
+		<Y>660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[1.]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671519033</Id>
+		<Name><![CDATA[IV_vx]]></Name>
+		<X>180</X>
+		<Y>580</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[uniform(0, IV_maxSpeed/2)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671523150</Id>
+		<Name><![CDATA[IV_vy]]></Name>
+		<X>180</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[uniform(0, IV_maxSpeed/2)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671533265</Id>
+		<Name><![CDATA[IV_maxSpeed]]></Name>
+		<X>180</X>
+		<Y>620</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[5.]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671570204</Id>
+		<Name><![CDATA[IV_maxForce]]></Name>
+		<X>180</X>
+		<Y>640</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0.5]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671590282</Id>
+		<Name><![CDATA[IV_fx]]></Name>
+		<X>180</X>
+		<Y>690</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671595517</Id>
+		<Name><![CDATA[IV_fy]]></Name>
+		<X>180</X>
+		<Y>710</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780671603877</Id>
+		<Name><![CDATA[IV_separationDist]]></Name>
+		<X>180</X>
+		<Y>540</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[10.]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780673581111</Id>
+		<Name><![CDATA[variable]]></Name>
+		<X>-120</X>
+		<Y>380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
 		</Properties>
 	</Variable>
 </Variables>

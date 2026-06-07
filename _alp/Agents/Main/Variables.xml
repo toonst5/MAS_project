@@ -403,27 +403,6 @@
 		</Properties>
 	</Variable>
 	<Variable Class="CollectionVariable">
-		<Id>1780408700994</Id>
-		<Name><![CDATA[food_Nodes]]></Name>
-		<X>-260</X>
-		<Y>560</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-			<CollectionClass>ArrayList</CollectionClass>
-			<ElementClass>ShapeRectangle</ElementClass>
-			<ValueElementClass>String</ValueElementClass>
-			<CollectionInitializer Class="CodeValue">
-				<Code><![CDATA[{ food2, food1, food3 }]]></Code>
-			</CollectionInitializer>
-		</Properties>
-	</Variable>
-	<Variable Class="CollectionVariable">
 		<Id>1780500298810</Id>
 		<Name><![CDATA[shelter_Nodes]]></Name>
 		<X>-260</X>

@@ -96,274 +96,6 @@
 	<Variables xmlns:al="http://anylogic.com"/>
 	<StatechartElements>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780511107353</Id>
-			<Name><![CDATA[Searching]]></Name>
-			<X>650</X>
-			<Y>230</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="100" Height="30">
-				<EntryAction>Point p = main.oceanNode.randomPointInside();
-moveTo(p.x, p.y);
-
-</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780511056846</Id>
-			<Name><![CDATA[branch]]></Name>
-			<X>380</X>
-			<Y>240</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780511230470</Id>
-			<Name><![CDATA[move_to_food]]></Name>
-			<X>470</X>
-			<Y>290</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="100" Height="30">
-				<EntryAction>IV_energyDrain = 10;
-moveTo(IV_foodTarget);
-</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780511269148</Id>
-			<Name><![CDATA[branch1]]></Name>
-			<X>510</X>
-			<Y>240</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780511273121</Id>
-			<Name><![CDATA[branch2]]></Name>
-			<X>510</X>
-			<Y>380</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780511355961</Id>
-			<Name><![CDATA[Eat]]></Name>
-			<X>470</X>
-			<Y>440</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="100" Height="30">
-				<EntryAction>
-
-IV_energy += 80;
-
-main.remove_foodPopulation(IV_foodTarget);
-</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780511785335</Id>
-			<Name><![CDATA[branch3]]></Name>
-			<X>380</X>
-			<Y>530</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780512465269</Id>
-			<Name><![CDATA[branch4]]></Name>
-			<X>510</X>
-			<Y>530</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780512591163</Id>
-			<Name><![CDATA[move_to_shelter]]></Name>
-			<X>440</X>
-			<Y>590</Y>
-			<Label>
-				<X>25</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="130" Height="30">
-				<EntryAction>moveTo(IV_nearestShelter);
-IV_energyDrain = 10;</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780512613408</Id>
-			<Name><![CDATA[hide]]></Name>
-			<X>460</X>
-			<Y>740</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="100" Height="60">
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780512629255</Id>
-			<Name><![CDATA[branch5]]></Name>
-			<X>510</X>
-			<Y>680</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780512929897</Id>
-			<Name><![CDATA[move_to_fish_clsuter]]></Name>
-			<X>450</X>
-			<Y>1030</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="135" Height="30">
-				<EntryAction>
-double cx = 0;
-double cy = 0;
-int count = 0;
-
-for (A_Fish f : main.fishPopulation) {
-    if (f != this &amp;&amp; distanceTo(f) &lt; V_visionRange) {
-        cx += f.getX();
-        cy += f.getY();
-        count++;
-    }
-}
-
-if (count &gt; 0) {
-    cx /= count;
-    cy /= count;
-    moveTo(cx, cy);
-    IV_energyDrain = 10;
-}
-</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780512952437</Id>
-			<Name><![CDATA[branch7]]></Name>
-			<X>510</X>
-			<Y>970</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1780516931570</Id>
-			<Name><![CDATA[reproduce]]></Name>
-			<X>470</X>
-			<Y>1170</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="100" Height="30">
-				<EntryAction>if(IV_energy &gt; 70) {
-    A_Fish f=main.add_fishPopulation();
-    IV_energy -= 50;
-    if(uniform_discr(0, 1)&gt;0.1)//mutation chance
-    {
-    	f.V_type=V_type;
-    }
-    f.jumpTo(getX(), getY());
-}</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1780516940497</Id>
-			<Name><![CDATA[branch8]]></Name>
-			<X>510</X>
-			<Y>1110</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1780569349035</Id>
 			<Name><![CDATA[start_up_wait]]></Name>
 			<X>340</X>
@@ -377,6 +109,253 @@ if (count &gt; 0) {
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
 				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780673273322</Id>
+			<Name><![CDATA[branch]]></Name>
+			<X>390</X>
+			<Y>260</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties>
+				<Action>IV_nearestPredator = nearestPredator();
+traceln("b1");</Action>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780673313227</Id>
+			<Name><![CDATA[afraid]]></Name>
+			<X>440</X>
+			<Y>245</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>int n = 3;
+
+double fx = this.getX();
+double fy = this.getY();
+double px = IV_nearestPredator.getX();
+double py = IV_nearestPredator.getY();
+
+Point bestPoint = null;
+double bestDist = -1;
+
+for (int i = 0; i &lt; n; i++) {
+    Point candidate = getRandomPointInRange();
+
+    double dx = candidate.getX() - px;
+    double dy = candidate.getY() - py;
+    double distFromPredator = Math.sqrt(dx * dx + dy * dy);
+
+    if (distFromPredator &gt; bestDist) {
+        bestDist  = distFromPredator;
+        bestPoint = candidate;
+    }
+}
+moveTo(bestPoint);</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780673387333</Id>
+			<Name><![CDATA[branch1]]></Name>
+			<X>390</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780673409130</Id>
+			<Name><![CDATA[hungry]]></Name>
+			<X>440</X>
+			<Y>315</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>IV_foodTarget = nearestFood();</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780673445682</Id>
+			<Name><![CDATA[classic]]></Name>
+			<X>340</X>
+			<Y>470</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>Point target = getRandomPointInRange();
+moveTo(target);</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780674446096</Id>
+			<Name><![CDATA[moveToFood]]></Name>
+			<X>610</X>
+			<Y>320</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>moveTo(IV_foodTarget)</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780674575982</Id>
+			<Name><![CDATA[eat]]></Name>
+			<X>810</X>
+			<Y>315</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>IV_energy += 200;
+main.remove_foodPopulation(IV_foodTarget);</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780674619912</Id>
+			<Name><![CDATA[branch2]]></Name>
+			<X>750</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780679860286</Id>
+			<Name><![CDATA[reproduce]]></Name>
+			<X>440</X>
+			<Y>390</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>IV_energy -= 150;
+A_Fish newFish = main.add_fishPopulation();
+newFish.jumpTo(getX(), getY());</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780679868072</Id>
+			<Name><![CDATA[branch3]]></Name>
+			<X>390</X>
+			<Y>400</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780848004786</Id>
+			<Name><![CDATA[branch4]]></Name>
+			<X>580</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780848195636</Id>
+			<Name><![CDATA[branch5]]></Name>
+			<X>610</X>
+			<Y>215</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties>
+				<Action>traceln("b2");</Action>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780848226895</Id>
+			<Name><![CDATA[branch6]]></Name>
+			<X>860</X>
+			<Y>120</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1780848262454</Id>
+			<Name><![CDATA[branch7]]></Name>
+			<X>600</X>
+			<Y>140</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties>
+				<Action>traceln("b3");</Action>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
@@ -404,10 +383,10 @@ if (count &gt; 0) {
 			<Properties Target="1780569349035"/>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780511236302</Id>
-			<Name><![CDATA[transition15]]></Name>
-			<X>392</X>
-			<Y>240</Y>
+			<Id>1780569367418</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>390</X>
+			<Y>130</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -421,34 +400,51 @@ if (count &gt; 0) {
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>106</X>
-					<Y>0</Y>
+					<X>0</X>
+					<Y>120</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511056846" Target="1780511269148" Trigger="timeout">
-				<Action>IV_foodTarget=nearestFood();</Action>
+			<Properties Source="1780569349035" Target="1780673273322" Trigger="condition">
+				<Action>/*if (V_type == 1) { // normal
+    V_visionRange = 300;
+    V_schoolingRange = 20;
+    V_schoolingSize = 30;
+}
+
+if (V_type == 2) { // timid (scared fish)
+    V_visionRange = 400;   // sees predators earlier
+    V_schoolingRange = 30;
+    V_schoolingSize = 40;
+}
+
+if (V_type == 3) { // aggressive (greedy fish)
+    V_visionRange = 200;   // less awareness
+    V_schoolingRange = 20;
+    V_schoolingSize = 15;
+}
+*/</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>IV_energy &lt;= 90 </Condition>
+				<Condition>true//V_type!=0</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
 				</Rate>
 				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
+				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
 				<EqualsExpression>"text"</EqualsExpression>
 				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780511768024</Id>
-			<Name><![CDATA[transition17]]></Name>
-			<X>522</X>
-			<Y>240</Y>
+			<Id>1780673317855</Id>
+			<Name><![CDATA[transition1]]></Name>
+			<X>390</X>
+			<Y>270</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -462,12 +458,12 @@ if (count &gt; 0) {
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>128</X>
-					<Y>0</Y>
+					<X>0</X>
+					<Y>50</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511269148" Target="1780511107353" Trigger="timeout">
+			<Properties Source="1780673273322" Target="1780673387333" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -485,10 +481,51 @@ if (count &gt; 0) {
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780511863510</Id>
-			<Name><![CDATA[transition16]]></Name>
-			<X>510</X>
-			<Y>250</Y>
+			<Id>1780673322350</Id>
+			<Name><![CDATA[transition2]]></Name>
+			<X>402</X>
+			<Y>260</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>38</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780673273322" Target="1780673313227" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>IV_nearestPredator != null
+//&amp;&amp; main.predator</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>false</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780673404850</Id>
+			<Name><![CDATA[transition3]]></Name>
+			<X>390</X>
+			<Y>340</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -503,11 +540,143 @@ if (count &gt; 0) {
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>40</Y>
+					<Y>50</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511269148" Target="1780511230470" Trigger="timeout">
+			<Properties Source="1780673387333" Target="1780679868072" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780673413819</Id>
+			<Name><![CDATA[transition4]]></Name>
+			<X>402</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>38</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780673387333" Target="1780673409130" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>IV_energy &lt;= 150</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>false</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780674345564</Id>
+			<Name><![CDATA[transition5]]></Name>
+			<X>340</X>
+			<Y>480</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-30</X>
+					<Y>-80</Y>
+				</Point>
+				<Point>
+					<X>-40</X>
+					<Y>-270</Y>
+				</Point>
+				<Point>
+					<X>50</X>
+					<Y>-270</Y>
+				</Point>
+				<Point>
+					<X>50</X>
+					<Y>-230</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780673445682" Target="1780673273322" Trigger="arrival">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780674484039</Id>
+			<Name><![CDATA[transition6]]></Name>
+			<X>592</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>18</X>
+					<Y>5</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780848004786" Target="1780674446096" Trigger="condition">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -526,9 +695,90 @@ if (count &gt; 0) {
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780511926185</Id>
-			<Name><![CDATA[transition14]]></Name>
-			<X>510</X>
+			<Id>1780674623111</Id>
+			<Name><![CDATA[transition7]]></Name>
+			<X>710</X>
+			<Y>335</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>28</X>
+					<Y>-5</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780674446096" Target="1780674619912" Trigger="arrival">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780674637999</Id>
+			<Name><![CDATA[transition8]]></Name>
+			<X>762</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>48</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780674619912" Target="1780674575982" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>IV_foodTarget != null
+&amp;&amp; main.foodPopulation.contains(IV_foodTarget)</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>false</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780674709687</Id>
+			<Name><![CDATA[transition9]]></Name>
+			<X>750</X>
 			<Y>320</Y>
 			<Label>
 				<X>10</X>
@@ -544,13 +794,19 @@ if (count &gt; 0) {
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>50</Y>
+					<Y>-117</Y>
+				</Point>
+				<Point>
+					<X>-40</X>
+					<Y>-120</Y>
+				</Point>
+				<Point>
+					<X>-128</X>
+					<Y>-105</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511230470" Target="1780511273121" Trigger="arrival">
-				<Action>IV_foodTarget=nearestFood();
-IV_energyDrain = 5;</Action>
+			<Properties Source="1780674619912" Target="1780848195636" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -568,10 +824,10 @@ IV_energyDrain = 5;</Action>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780511963114</Id>
-			<Name><![CDATA[transition18]]></Name>
-			<X>522</X>
-			<Y>380</Y>
+			<Id>1780677652598</Id>
+			<Name><![CDATA[transition10]]></Name>
+			<X>870</X>
+			<Y>315</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -585,24 +841,20 @@ IV_energyDrain = 5;</Action>
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>338</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>338</X>
-					<Y>-210</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
-					<Y>-210</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
+					<X>0</X>
 					<Y>-150</Y>
 				</Point>
+				<Point>
+					<X>10</X>
+					<Y>-135</Y>
+				</Point>
+				<Point>
+					<X>-10</X>
+					<Y>-185</Y>
+				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511273121" Target="1780511056846" Trigger="timeout">
+			<Properties Source="1780674575982" Target="1780848226895" Trigger="condition">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -620,10 +872,362 @@ IV_energyDrain = 5;</Action>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512211360</Id>
+			<Id>1780679878979</Id>
+			<Name><![CDATA[transition11]]></Name>
+			<X>402</X>
+			<Y>400</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>38</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780679868072" Target="1780679860286" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>IV_energy &gt;= 250</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>false</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780679901517</Id>
+			<Name><![CDATA[transition12]]></Name>
+			<X>390</X>
+			<Y>410</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>60</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780679868072" Target="1780673445682" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780680245827</Id>
+			<Name><![CDATA[transition13]]></Name>
+			<X>540</X>
+			<Y>400</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>420</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>412</X>
+					<Y>-267</Y>
+				</Point>
+				<Point>
+					<X>400</X>
+					<Y>-280</Y>
+				</Point>
+				<Point>
+					<X>332</X>
+					<Y>-280</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780679860286" Target="1780848226895" Trigger="condition">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780682067745</Id>
+			<Name><![CDATA[transition14]]></Name>
+			<X>540</X>
+			<Y>260</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>30</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>26</X>
+					<Y>-30</Y>
+				</Point>
+				<Point>
+					<X>40</X>
+					<Y>-40</Y>
+				</Point>
+				<Point>
+					<X>58</X>
+					<Y>-45</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780673313227" Target="1780848195636" Trigger="arrival">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780848032361</Id>
+			<Name><![CDATA[transition15]]></Name>
+			<X>580</X>
+			<Y>320</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>20</X>
+					<Y>-20</Y>
+				</Point>
+				<Point>
+					<X>10</X>
+					<Y>-50</Y>
+				</Point>
+				<Point>
+					<X>30</X>
+					<Y>-95</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780848004786" Target="1780848195636" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780848052087</Id>
+			<Name><![CDATA[transition16]]></Name>
+			<X>540</X>
+			<Y>330</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>28</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780673409130" Target="1780848004786" Trigger="condition">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780848264712</Id>
+			<Name><![CDATA[transition17]]></Name>
+			<X>848</X>
+			<Y>120</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-236</X>
+					<Y>20</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780848226895" Target="1780848262454" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780848271691</Id>
+			<Name><![CDATA[transition18]]></Name>
+			<X>610</X>
+			<Y>205</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-10</X>
+					<Y>-55</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780848195636" Target="1780848262454" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780848289173</Id>
 			<Name><![CDATA[transition19]]></Name>
-			<X>720</X>
-			<Y>230</Y>
+			<X>588</X>
+			<Y>140</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -637,902 +1241,21 @@ IV_energyDrain = 5;</Action>
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>0</X>
-					<Y>-60</Y>
+					<X>-153</X>
+					<Y>26</Y>
 				</Point>
 				<Point>
-					<X>-340</X>
-					<Y>-60</Y>
-				</Point>
-				<Point>
-					<X>-340</X>
-					<Y>0</Y>
+					<X>-198</X>
+					<Y>110</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511107353" Target="1780511056846" Trigger="arrival">
+			<Properties Source="1780848262454" Target="1780673273322" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512254304</Id>
-			<Name><![CDATA[Eating]]></Name>
-			<X>510</X>
-			<Y>390</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511273121" Target="1780511355961" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_foodTarget != null
-&amp;&amp; main.foodPopulation.contains(IV_foodTarget)
-//&amp;&amp; !main.isFoodContaminated(IV_foodTarget)</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512326666</Id>
-			<Name><![CDATA[eating]]></Name>
-			<X>570</X>
-			<Y>450</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>290</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>290</X>
-					<Y>-280</Y>
-				</Point>
-				<Point>
-					<X>-190</X>
-					<Y>-280</Y>
-				</Point>
-				<Point>
-					<X>-190</X>
-					<Y>-220</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511355961" Target="1780511056846" Trigger="condition">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512442987</Id>
-			<Name><![CDATA[transition20]]></Name>
-			<X>380</X>
-			<Y>250</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>270</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511056846" Target="1780511785335" Trigger="timeout">
-				<Action>IV_nearestPredator = nearestPredator();</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512458459</Id>
-			<Name><![CDATA[transition21]]></Name>
-			<X>392</X>
-			<Y>530</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>106</X>
-					<Y>0</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511785335" Target="1780512465269" Trigger="timeout">
-				<Action>IV_nearestShelter = nearestShelter();</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestPredator != null
-&amp;&amp; distanceTo(IV_nearestPredator) &lt; (V_visionRange*0.5)</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512510700</Id>
-			<Name><![CDATA[transition22]]></Name>
-			<X>510</X>
-			<Y>540</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512465269" Target="1780512591163" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestShelter != null</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512552857</Id>
-			<Name><![CDATA[transition23]]></Name>
-			<X>522</X>
-			<Y>530</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>178</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>178</X>
-					<Y>-270</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512465269" Target="1780511107353" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512634085</Id>
-			<Name><![CDATA[transition24]]></Name>
-			<X>510</X>
-			<Y>620</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512591163" Target="1780512629255" Trigger="arrival">
-				<Action>IV_nearestShelter = nearestShelter();
-IV_energyDrain = 5;</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512648339</Id>
-			<Name><![CDATA[transition25]]></Name>
-			<X>510</X>
-			<Y>690</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512629255" Target="1780512613408" Trigger="timeout">
-				<Action>V_hiding = true;
-fishVisual.setVisible(false);</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestShelter != null</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512656703</Id>
-			<Name><![CDATA[transition26]]></Name>
-			<X>522</X>
-			<Y>680</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>338</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>338</X>
-					<Y>-510</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
-					<Y>-510</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
-					<Y>-450</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512629255" Target="1780511056846" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="hide" ParentStateId="1780512613408">
-			<Id>1780512788821</Id>
-			<Name><![CDATA[transition27]]></Name>
-			<X>560</X>
-			<Y>785</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-50</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-100</X>
-					<Y>0</Y>
-				</Point>
-			</Points>
-			<IconOffset>10.0</IconOffset>
-			<Properties Source="1780512613408" Target="1780512613408" Trigger="timeout">
-				<Action>IV_nearestPredator = nearestPredator();</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512830578</Id>
-			<Name><![CDATA[transition29]]></Name>
-			<X>560</X>
-			<Y>750</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>80</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>300</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>300</X>
-					<Y>-580</Y>
-				</Point>
-				<Point>
-					<X>-180</X>
-					<Y>-580</Y>
-				</Point>
-				<Point>
-					<X>-180</X>
-					<Y>-520</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512613408" Target="1780511056846" Trigger="condition">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestPredator == null 
-|| distanceTo(IV_nearestPredator) &gt;= V_visionRange
-|| IV_energy&lt;30</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780512919876</Id>
-			<Name><![CDATA[transition30]]></Name>
-			<X>380</X>
-			<Y>540</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>430</Y>
-				</Point>
-				<Point>
-					<X>118</X>
-					<Y>430</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780511785335" Target="1780512952437" Trigger="timeout">
-				<Action>IV_nearestFish=nearestFishCluster();</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780513218768</Id>
-			<Name><![CDATA[transition31]]></Name>
-			<X>510</X>
-			<Y>980</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512952437" Target="1780512929897" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestFish != null</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780513238372</Id>
-			<Name><![CDATA[transition32]]></Name>
-			<X>522</X>
-			<Y>970</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>178</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>178</X>
-					<Y>-710</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512952437" Target="1780511107353" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780516974397</Id>
-			<Name><![CDATA[transition28]]></Name>
-			<X>510</X>
-			<Y>1050</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>10</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780512929897" Target="1780516940497" Trigger="arrival">
-				<Action>IV_energyDrain = 5;</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780517017235</Id>
-			<Name><![CDATA[transition33]]></Name>
-			<X>510</X>
-			<Y>1120</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780516940497" Target="1780516931570" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>IV_nearestFish != null
-&amp;&amp; IV_energy &gt; 70</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780517021638</Id>
-			<Name><![CDATA[transition34]]></Name>
-			<X>522</X>
-			<Y>1110</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>338</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>338</X>
-					<Y>-940</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
-					<Y>-940</Y>
-				</Point>
-				<Point>
-					<X>-142</X>
-					<Y>-880</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780516940497" Target="1780511056846" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780517114816</Id>
-			<Name><![CDATA[transition35]]></Name>
-			<X>570</X>
-			<Y>1190</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>290</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>290</X>
-					<Y>-1020</Y>
-				</Point>
-				<Point>
-					<X>-190</X>
-					<Y>-1020</Y>
-				</Point>
-				<Point>
-					<X>-190</X>
-					<Y>-960</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780516931570" Target="1780511056846" Trigger="timeout">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_HOUR</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1780569367418</Id>
-			<Name><![CDATA[transition]]></Name>
-			<X>380</X>
-			<Y>130</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>100</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1780569349035" Target="1780511056846" Trigger="condition">
-				<Action>if (V_type == 1) { // normal
-    V_visionRange = 300;
-    V_schoolingRange = 20;
-    V_schoolingSize = 30;
-}
-
-if (V_type == 2) { // timid (scared fish)
-    V_visionRange = 400;   // sees predators earlier
-    V_schoolingRange = 30;
-    V_schoolingSize = 40;
-}
-
-if (V_type == 3) { // aggressive (greedy fish)
-    V_visionRange = 200;   // less awareness
-    V_schoolingRange = 20;
-    V_schoolingSize = 15;
-}
-
-
-
-
-</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</Timeout>
-				<Condition>V_type!=0</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>

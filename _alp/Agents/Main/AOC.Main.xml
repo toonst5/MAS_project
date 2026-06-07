@@ -23,8 +23,9 @@ double oceanY = oceanNode.getY();
 double shipWidth = 400.0;
 double shipHeight = 100.0;
 double shipRotation = uniform(0, 360); // Full random rotation
-double randomX = uniform(oceanX + shipWidth/2, oceanX + oceanWidth - shipWidth/2);
-double randomY = uniform(oceanY + shipHeight/2, oceanY + oceanHeight - shipHeight/2);
+double shipMax = max(shipWidth, shipHeight);
+double randomX = uniform(oceanX + shipMax, oceanX + oceanWidth - shipMax);
+double randomY = uniform(oceanY + shipMax, oceanY + oceanHeight - shipMax);
 shipZone.setPos(randomX, randomY, 0.0);
 shipZone.setSize(shipWidth, shipHeight);
 shipZone.setRotation(shipRotation);

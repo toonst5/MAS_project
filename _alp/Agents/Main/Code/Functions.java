@@ -16,3 +16,8 @@ for (ShapeRectangle fn : food_Nodes) {
 return availableFood;
 /*ALCODEEND*/}
 
+double remove_fishPopulation(A_Fish agent,String reason)
+{/*ALCODESTART::1780847745978*/
+remove_fishPopulation(agent);
+/*ALCODEEND*/}
+

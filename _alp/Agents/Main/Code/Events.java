@@ -3,7 +3,7 @@ void ShipSinks()
 //shipActive = true;
 shipZone.setVisible(true); // shipNode IS the visual now
 
-spawnRates.add(10.);
+spawnRates.add(5.);
 spawnNodes.add(shipZone);
 
 totalSpawnRate = spawnRates.stream().mapToDouble(Double::doubleValue).sum();

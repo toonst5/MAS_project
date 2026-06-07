@@ -423,7 +423,8 @@ visionRangeCircle.setRadius(IV_visionRange);
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
-				<Condition>(IV_target != null) &amp;&amp; (distanceTo(IV_target) &lt;= IV_huntRange)</Condition>
+				<Condition>(IV_target != null)
+&amp;&amp; (distanceTo(IV_target) &lt;= IV_huntRange)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
@@ -609,7 +610,8 @@ visionRangeCircle.setRadius(IV_visionRange);
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>!main.fishPopulation.contains(IV_target)
-|| IV_target.V_hiding == true</Condition>
+|| IV_target.V_hiding == true
+|| main.shipZone.contains(IV_target)</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_HOUR</Unit>
