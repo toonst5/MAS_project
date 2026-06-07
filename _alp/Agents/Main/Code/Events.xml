@@ -14,7 +14,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Properties TriggerType="timeout" Mode="userControls">
 			<Timeout Class="CodeUnitValue">
-				<Code><![CDATA[1]]></Code>
+				<Code><![CDATA[168]]></Code>
 				<Unit Class="TimeUnits">HOUR</Unit>
 			</Timeout>
 			<Rate Class="CodeUnitValue">

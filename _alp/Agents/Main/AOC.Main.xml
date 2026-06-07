@@ -11,7 +11,7 @@ exportFile.println(
 	+ "; "
 	+ "fishPopulationSize"
 	+ "; "
-	+ "predatorPopulationSize"
+	+ "reason"
 );
 
 //RectangularNode shipZone; // just declaration
