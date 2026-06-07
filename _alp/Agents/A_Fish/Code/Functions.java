@@ -50,10 +50,10 @@ ShapeRectangle nearestFood()
 
 ShapeRectangle closestFood = null;
 double minDist = Double.MAX_VALUE;
-
-for (ShapeRectangle n : main.food_Nodes) {
+ArrayList<ShapeRectangle> availableFood = main.getAvailableFoodNodes();
+for (ShapeRectangle n : availableFood) {
     // only consider open food nodes
-    if (n.getWidth() > 30 && !main.isFoodContaminated(n)) {//n.isOpen()
+    if (n.getWidth() > 10 && !main.isFoodContaminated(n)) {//n.isOpen()
         double d = distanceTo(n.getCenter().x, n.getCenter().y);
 
         if (d < minDist) {

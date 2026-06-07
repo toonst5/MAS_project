@@ -25,6 +25,12 @@ exportFile.println(
 	+ fishPopulation.size()
 	+ "; "
 	+ reason
+	+ "; "
+	+ type1count
+	+ "; "
+	+ type2count
+	+ "; "
+	+ type3count
 );
 /*ALCODEEND*/}
 
@@ -37,6 +43,12 @@ exportFile.println(
 	+ fishPopulation.size()
 	+ "; "
 	+ reason
+	+ "; "
+	+ type1count
+	+ "; "
+	+ type2count
+	+ "; "
+	+ type3count
 );
 
 return f;

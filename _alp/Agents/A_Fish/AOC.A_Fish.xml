@@ -142,7 +142,7 @@ moveTo(p.x, p.y);
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
-				<EntryAction>IV_energyDrain = 10;
+				<EntryAction>IV_energyDrain = V_BaseEnergyDrain*2;
 moveTo(IV_foodTarget.randomPointInside());
 </EntryAction>
 				<FillColor>-10496</FillColor>
@@ -248,7 +248,7 @@ IV_foodTarget.setPos(
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="130" Height="30">
 				<EntryAction>moveTo(IV_nearestShelter);
-IV_energyDrain = 10;</EntryAction>
+IV_energyDrain = V_BaseEnergyDrain*2;</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -312,7 +312,7 @@ if (count &gt; 0) {
     cx /= count;
     cy /= count;
     moveTo(cx, cy);
-    IV_energyDrain = 10;
+    IV_energyDrain = V_BaseEnergyDrain*2;
 }
 </EntryAction>
 				<FillColor>-10496</FillColor>
@@ -348,7 +348,7 @@ if (count &gt; 0) {
 				<EntryAction>if(IV_energy &gt; 70) {
     A_Fish f=main.add_fishPopulation();
     IV_energy -= 50;
-    if(uniform_discr(0, 1)&gt;0.1)//mutation chance
+    if(uniform_discr(0, 100)&gt; main.V_MutationChance)//mutation chance
     {
     	f.V_type=V_type;
     }
@@ -384,6 +384,10 @@ if (count &gt; 0) {
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="100" Height="30">
+				<EntryAction>if(main.V_TypeOveride!=0)
+{
+	V_type=main.V_TypeOveride;
+}</EntryAction>
 				<FillColor>-10496</FillColor>
 			</Properties>
 		</StatechartElement>
@@ -557,7 +561,7 @@ if (count &gt; 0) {
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780511230470" Target="1780511273121" Trigger="arrival">
 				<Action>IV_foodTarget=nearestFood();
-IV_energyDrain = 5;</Action>
+IV_energyDrain = V_BaseEnergyDrain;</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -969,7 +973,7 @@ IV_foodTarget.setPos(
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780512591163" Target="1780512629255" Trigger="arrival">
 				<Action>IV_nearestShelter = nearestShelter();
-IV_energyDrain = 5;</Action>
+IV_energyDrain = V_BaseEnergyDrain;</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -1336,7 +1340,7 @@ fishVisual.setVisible(false);</Action>
 			</Points>
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780512929897" Target="1780516940497" Trigger="arrival">
-				<Action>IV_energyDrain = 5;</Action>
+				<Action>IV_energyDrain = V_BaseEnergyDrain;</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
@@ -1526,23 +1530,23 @@ fishVisual.setVisible(false);</Action>
     V_visionRange = 300;
     V_schoolingRange = 20;
     V_schoolingSize = 30;
+    V_BaseEnergyDrain=7;
+    
 }
 
 if (V_type == 2) { // timid (scared fish)
     V_visionRange = 400;   // sees predators earlier
     V_schoolingRange = 30;
     V_schoolingSize = 40;
+    V_BaseEnergyDrain=5;
 }
 
 if (V_type == 3) { // aggressive (greedy fish)
     V_visionRange = 200;   // less awareness
     V_schoolingRange = 20;
     V_schoolingSize = 15;
+    V_BaseEnergyDrain=7;
 }
-
-
-
-
 </Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>

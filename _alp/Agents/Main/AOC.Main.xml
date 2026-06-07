@@ -11,19 +11,14 @@ exportFile.println(
 	+ "; "
 	+ "fishPopulationSize"
 	+ "; "
-	+ "predatorPopulationSize"
+	+ "reason"
+	+ "; "
+	+ "fishPopulationSizeType1"
+	+ "; "
+	+ "fishPopulationSizeType2"
+	+ "; "
+	+ "fishPopulationSizeType3"
 );
-
-
-
-
-//shipwreck causes
-double killRadius = 40;
-double avoidRadius = 70;
-double contamRadius = 80;
-
-ShipSinks.restart(uniform(1, 30));
-
 ]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
@@ -117,14 +112,345 @@ ShipSinks.restart(uniform(1, 30));
 	<CurrentLevel>1779214914773</CurrentLevel>
 	<ConnectionsId>1779214914768</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
+	<StatechartElements>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780852614642</Id>
+			<Name><![CDATA[Base]]></Name>
+			<X>40</X>
+			<Y>1440</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780852644425</Id>
+			<Name><![CDATA[ship_drop]]></Name>
+			<X>40</X>
+			<Y>1520</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>shipClass.setVisible(true);
+shipActive = true;
+double shipW = 120;
+double shipH = 100;
+
+shelter_Nodes.add(shipShelter);
+shelter_Nodes.add(shipShelter1);
+
+//double shipX = oceanNode.getX() + shipW+ uniform(0, oceanNode.getWidth() -  2* shipW);
+//double shipY = oceanNode.getY() + shipH+ uniform(0, oceanNode.getHeight() - 2* shipH);
+double shipX = 350;
+double shipY = 330;
+
+
+//Point p = oceanNode.randomPointInside();
+shipClass.setPos(shipX, shipY);
+double shipCenterX = shipX + shipW / 2;
+double shipCenterY = shipY + shipH / 2;
+double contamRadius = 350;
+double killRadius = 200;
+//works -&gt; one food target gets slowly back to it's orginal -&gt; fishes do not go there
+for (ShapeRectangle f : food_Nodes) {
+    double foodCenterX = f.getX() + f.getWidth() / 2;
+    double foodCenterY = f.getY() + f.getHeight() / 2;
+
+    double d = Math.sqrt(
+        Math.pow(foodCenterX - shipCenterX, 2) +
+        Math.pow(foodCenterY - shipCenterY, 2)
+    );
+	//double foodRadiusApprox = Math.max(f.getWidth(), f.getHeight()) / 2;
+	
+    if (d &lt;= contamRadius) {
+        contaminatedFood.add(f);
+        //food_Nodes.remove(f);
+    }
+}
+//initial killing impact -&gt; seems to work as well
+for ( int i = fishPopulation.size() -1; i &gt;= 0; i--) {
+	A_Fish fi = fishPopulation.get(i);
+	//double fishCenterX = fi.getX() + fi.getWidth() /2;
+	//double fishCenterY = fi.getY() + fi.getHeight() /2;
+	double d = Math.sqrt(
+        Math.pow(fi.getX() - shipCenterX, 2) +
+        Math.pow(fi.getY() - shipCenterY, 2)
+    );
+    if (d &lt;= killRadius) {
+        remove_fishPopulation(fi);
+    }
+}</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1780852647546</Id>
+			<Name><![CDATA[polution_disapears]]></Name>
+			<X>40</X>
+			<Y>1610</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="120" Height="30">
+				<EntryAction>food_Nodes.add(ShipFood1);
+food_Nodes.add(ShipFood2);
+food_Nodes.add(ShipFood3);
+
+contaminatedFood.clear();
+</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1780852612518</Id>
+			<Name><![CDATA[statechart]]></Name>
+			<X>90</X>
+			<Y>1400</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>40</Y>
+				</Point>
+			</Points>
+			<Properties Target="1780852614642"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780852641646</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>70</X>
+			<Y>1470</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>50</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780852614642" Target="1780852644425" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[500]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1780852650493</Id>
+			<Name><![CDATA[transition1]]></Name>
+			<X>70</X>
+			<Y>1550</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>60</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1780852644425" Target="1780852647546" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[500]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_HOUR</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+	</StatechartElements>
 	<Events xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
+	<AnalysisData>
+		<DataSet>
+			<Id>1780857870667</Id>
+			<Name><![CDATA[dataset]]></Name>
+			<X>-230</X>
+			<Y>880</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<AutoUpdate>true</AutoUpdate>
+			<RecurrenceProperties>
+				<Id>1780857870665</Id>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1780905600000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+			</RecurrenceProperties>
+			<FreezeXAxis>true</FreezeXAxis>
+			<VerticalAxisExpression>fishPopulation.size()</VerticalAxisExpression>
+			<SamplesToKeep>1500</SamplesToKeep>
+		</DataSet>
+		<DataSet>
+			<Id>1780857873744</Id>
+			<Name><![CDATA[dataset1]]></Name>
+			<X>-230</X>
+			<Y>900</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<AutoUpdate>true</AutoUpdate>
+			<RecurrenceProperties>
+				<Id>1780857873742</Id>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1780905600000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+			</RecurrenceProperties>
+			<FreezeXAxis>true</FreezeXAxis>
+			<VerticalAxisExpression>type1count</VerticalAxisExpression>
+			<SamplesToKeep>1500</SamplesToKeep>
+		</DataSet>
+		<DataSet>
+			<Id>1780857875888</Id>
+			<Name><![CDATA[dataset2]]></Name>
+			<X>-230</X>
+			<Y>920</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<AutoUpdate>true</AutoUpdate>
+			<RecurrenceProperties>
+				<Id>1780857875886</Id>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1780905600000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+			</RecurrenceProperties>
+			<FreezeXAxis>true</FreezeXAxis>
+			<VerticalAxisExpression>type2count</VerticalAxisExpression>
+			<SamplesToKeep>1500</SamplesToKeep>
+		</DataSet>
+		<DataSet>
+			<Id>1780857879064</Id>
+			<Name><![CDATA[dataset3]]></Name>
+			<X>-230</X>
+			<Y>940</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<AutoUpdate>true</AutoUpdate>
+			<RecurrenceProperties>
+				<Id>1780857879062</Id>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1780905600000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+			</RecurrenceProperties>
+			<FreezeXAxis>true</FreezeXAxis>
+			<VerticalAxisExpression>type3count</VerticalAxisExpression>
+			<SamplesToKeep>1500</SamplesToKeep>
+		</DataSet>
+	</AnalysisData>
 	<Connectivity>
 		<TextFile>
 			<Id>1780502799298</Id>
 			<Name><![CDATA[exportFile]]></Name>
-			<X>-240</X>
-			<Y>990</Y>
+			<X>-419</X>
+			<Y>1185</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -160,6 +486,11 @@ ShipSinks.restart(uniform(1, 30));
 			<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
 			<AgentLinkBidirectional>true</AgentLinkBidirectional>
 			<MessageType>Object</MessageType>
+			<StatechartReference>
+				<PackageName>mas_project</PackageName>
+				<ClassName>Main</ClassName>
+				<ItemName>statechart</ItemName>
+			</StatechartReference>
 			<LineStyle>SOLID</LineStyle>
 			<LineWidth>1</LineWidth>
 			<LineColor>-16777216</LineColor>

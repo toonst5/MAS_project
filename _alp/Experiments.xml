@@ -1,21 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Experiments>
-	<SimulationExperiment ActiveObjectClassId="1779214914767">
-		<Id>1779214914775</Id>
-		<Name><![CDATA[Simulation]]></Name>
+	<CompareRunsExperiment ActiveObjectClassId="1779214914767">
+		<Id>1780858052467</Id>
+		<Name><![CDATA[CompareRuns]]></Name>
 		<CommandLineArguments/>
 		<MaximumMemory>512</MaximumMemory>
-		<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+		<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 		<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+		<AfterSimulationRunCode>parametersOfRuns.add( new Object[] { V_TypeOveride, V_MutationChance } );
+int numberOfRuns = getEngine().getRunCount();
+Color color = spectrumColor( (numberOfRuns * 4) % 21, 21 );
+while ( chart0.getCount() &gt;= parametersOfRuns.size() ) {
+	chart0.remove( chart0.getCount() - 1 );
+}
+chart0.addDataSet( root.dataset, "Run " + numberOfRuns, color, true, Chart.INTERPOLATION_LINEAR, 1, Chart.POINT_NONE );
+while ( chart1.getCount() &gt;= parametersOfRuns.size() ) {
+	chart1.remove( chart1.getCount() - 1 );
+}
+chart1.addDataSet( root.dataset1, "Run " + numberOfRuns, color, true, Chart.INTERPOLATION_LINEAR, 1, Chart.POINT_NONE );
+while ( chart2.getCount() &gt;= parametersOfRuns.size() ) {
+	chart2.remove( chart2.getCount() - 1 );
+}
+chart2.addDataSet( root.dataset2, "Run " + numberOfRuns, color, true, Chart.INTERPOLATION_LINEAR, 1, Chart.POINT_NONE );
+while ( chart3.getCount() &gt;= parametersOfRuns.size() ) {
+	chart3.remove( chart3.getCount() - 1 );
+}
+chart3.addDataSet( root.dataset3, "Run " + numberOfRuns, color, true, Chart.INTERPOLATION_LINEAR, 1, Chart.POINT_NONE );
+</AfterSimulationRunCode>
 		<SeedValue>1</SeedValue>
 		<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 		<VmArgs/>
 		<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+		<Variables>
+			<Variable Class="PlainVariable">
+				<Id>1780858052474</Id>
+				<Name><![CDATA[V_TypeOveride]]></Name>
+				<X>-350</X>
+				<Y>145</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<Properties SaveInSnapshot="true"
+                Constant="false"
+                AccessType="public"
+                StaticVariable="false">
+					<Type><![CDATA[int]]></Type>
+				</Properties>
+			</Variable>
+			<Variable Class="PlainVariable">
+				<Id>1780858052480</Id>
+				<Name><![CDATA[V_MutationChance]]></Name>
+				<X>-350</X>
+				<Y>205</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<Properties SaveInSnapshot="true"
+                Constant="false"
+                AccessType="public"
+                StaticVariable="false">
+					<Type><![CDATA[double]]></Type>
+				</Properties>
+			</Variable>
+			<Variable Class="CollectionVariable">
+				<Id>1780858052487</Id>
+				<Name><![CDATA[parametersOfRuns]]></Name>
+				<X>-350</X>
+				<Y>100</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>true</ShowLabel>
+				<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+					<CollectionClass>java.util.ArrayList</CollectionClass>
+					<ElementClass>Object[]</ElementClass>
+					<ValueElementClass>String</ValueElementClass>
+				</Properties>
+			</Variable>
+		</Variables>
+		<Functions>
+			<Function AccessType="default" StaticFunction="false">
+				<ReturnModificator>VOID</ReturnModificator>
+				<ReturnType>double</ReturnType>
+				<Id>1780858052489</Id>
+				<Name><![CDATA[loadParametersOfRun]]></Name>
+				<X>-350</X>
+				<Y>130</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>true</ShowLabel>
+				<Parameter>
+					<Name><![CDATA[runNumber]]></Name>
+					<Type><![CDATA[int]]></Type>
+				</Parameter>
+				<Body><![CDATA[if ( runNumber < 0 || runNumber >= parametersOfRuns.size() ) {
+	traceln( "ERROR! Couldn't load parameters for run # " + runNumber );
+	return;
+}
+
+Object[] values = parametersOfRuns.get( runNumber );
+
+edit_V_TypeOveride.setText( String.valueOf( values[0] ), true );
+edit_V_MutationChance.setText( String.valueOf( values[1] ), true );
+]]></Body>
+			</Function>
+		</Functions>
 		<Presentation>
 			<Text>
-				<Id>1779214914777</Id>
+				<Id>1780858052469</Id>
 				<Name><![CDATA[text]]></Name>
-				<X>50</X>
+				<X>40</X>
 				<Y>30</Y>
 				<Label>
 					<X>10</X>
@@ -29,7 +138,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-12490271</Color>
-				<Text><![CDATA[MAS_project]]></Text>
+				<Text><![CDATA[MAS_project : CompareRuns]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>24</Size>
@@ -37,45 +146,705 @@
 				</Font>
 				<Alignment>LEFT</Alignment>
 			</Text>
+			<Text>
+				<Id>1780858052470</Id>
+				<Name><![CDATA[text1]]></Name>
+				<X>50</X>
+				<Y>80</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12171190</Color>
+				<Text><![CDATA[Number of Runs:]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1780858052471</Id>
+				<Name><![CDATA[text2]]></Name>
+				<X>240</X>
+				<Y>80</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12042869</Color>
+				<Text><![CDATA[?]]></Text>
+				<TextCode>format( getEngine().getRunCount() )</TextCode>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>RIGHT</Alignment>
+			</Text>
+			<Text>
+				<Id>1780858052472</Id>
+				<Name><![CDATA[text3]]></Name>
+				<X>50</X>
+				<Y>110</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12566464</Color>
+				<Text><![CDATA[Parameters]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Line>
+				<Id>1780858052473</Id>
+				<Name><![CDATA[line]]></Name>
+				<X>40</X>
+				<Y>130</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>2</LineWidth>
+				<LineColor>-12566464</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<Dx>210</Dx>
+				<Dy>0</Dy>
+				<Dz>0</Dz>
+			</Line>
+			<Text>
+				<Id>1780858052476</Id>
+				<Name><![CDATA[text4]]></Name>
+				<X>50</X>
+				<Y>140</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12171190</Color>
+				<Text><![CDATA[V_TypeOveride]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1780858052477</Id>
+				<Name><![CDATA[text5]]></Name>
+				<X>240</X>
+				<Y>140</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12042869</Color>
+				<Text><![CDATA[?]]></Text>
+				<TextCode>format( V_TypeOveride )</TextCode>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>RIGHT</Alignment>
+			</Text>
+			<Control Type="EditBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1780858052478</Id>
+				<Name><![CDATA[edit_V_TypeOveride]]></Name>
+				<X>50</X>
+				<Y>160</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="190" Height="20">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<FillColor>-1</FillColor>
+					<TextColor>-12042869</TextColor>
+					<Enabled>true</Enabled>
+					<EnableExpression>getState() == IDLE</EnableExpression>
+					<ActionCode>V_TypeOveride = Integer.parseInt( value );</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="SansSerif" Size="12" Style="0"/>
+					<DefaultValueCode>String.valueOf( V_TypeOveride )</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Rectangle>
+				<Id>1780858052482</Id>
+				<Name><![CDATA[rectangle]]></Name>
+				<X>40</X>
+				<Y>190</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>210</Width>
+				<Height>60</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-657931</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Text>
+				<Id>1780858052483</Id>
+				<Name><![CDATA[text6]]></Name>
+				<X>50</X>
+				<Y>200</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12171190</Color>
+				<Text><![CDATA[V_MutationChance]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1780858052484</Id>
+				<Name><![CDATA[text7]]></Name>
+				<X>240</X>
+				<Y>200</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12042869</Color>
+				<Text><![CDATA[?]]></Text>
+				<TextCode>format( V_MutationChance )</TextCode>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>RIGHT</Alignment>
+			</Text>
+			<Control Type="EditBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1780858052485</Id>
+				<Name><![CDATA[edit_V_MutationChance]]></Name>
+				<X>50</X>
+				<Y>220</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="190" Height="20">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<FillColor>-1</FillColor>
+					<TextColor>-12042869</TextColor>
+					<Enabled>true</Enabled>
+					<EnableExpression>getState() == IDLE</EnableExpression>
+					<ActionCode>V_MutationChance = Double.parseDouble( value );</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="SansSerif" Size="12" Style="0"/>
+					<DefaultValueCode>String.valueOf( V_MutationChance )</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Text>
+				<Id>1780858052491</Id>
+				<Name><![CDATA[text8]]></Name>
+				<X>350</X>
+				<Y>110</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12566464</Color>
+				<Text><![CDATA[population]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Plot>
+				<Id>1780858052493</Id>
+				<Name><![CDATA[chart0]]></Name>
+				<X>320</X>
+				<Y>110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1780858052492</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1780905600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>560</Width>
+				<Height>290</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<OnSelectionChangeCode>if ( !programmatically ) {
+	if ( selectedIndices.length == 1 ) {
+		loadParametersOfRun( selectedIndices[0] );
+	}
+	chart1.setSelectedItemIndices( selectedIndices );
+	chart2.setSelectedItemIndices( selectedIndices );
+	chart3.setSelectedItemIndices( selectedIndices );
+}
+</OnSelectionChangeCode>
+				<ChartArea>
+					<XOffset>30</XOffset>
+					<YOffset>20</YOffset>
+					<Width>500</Width>
+					<Height>210</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-9868951</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>40</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>100</SamplesToKeep>
+				<HorScaleFromExpression>0</HorScaleFromExpression>
+				<HorScaleToExpression>1</HorScaleToExpression>
+				<HorScaleType>AUTO</HorScaleType>
+			</Plot>
+			<Text>
+				<Id>1780858052495</Id>
+				<Name><![CDATA[text9]]></Name>
+				<X>350</X>
+				<Y>420</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12566464</Color>
+				<Text><![CDATA[population1]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Plot>
+				<Id>1780858052497</Id>
+				<Name><![CDATA[chart1]]></Name>
+				<X>320</X>
+				<Y>420</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1780858052496</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1780905600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>560</Width>
+				<Height>290</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<OnSelectionChangeCode>if ( !programmatically ) {
+	if ( selectedIndices.length == 1 ) {
+		loadParametersOfRun( selectedIndices[0] );
+	}
+	chart0.setSelectedItemIndices( selectedIndices );
+	chart2.setSelectedItemIndices( selectedIndices );
+	chart3.setSelectedItemIndices( selectedIndices );
+}
+</OnSelectionChangeCode>
+				<ChartArea>
+					<XOffset>30</XOffset>
+					<YOffset>20</YOffset>
+					<Width>500</Width>
+					<Height>210</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-9868951</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>40</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>100</SamplesToKeep>
+				<HorScaleFromExpression>0</HorScaleFromExpression>
+				<HorScaleToExpression>1</HorScaleToExpression>
+				<HorScaleType>AUTO</HorScaleType>
+			</Plot>
+			<Text>
+				<Id>1780858052499</Id>
+				<Name><![CDATA[text10]]></Name>
+				<X>350</X>
+				<Y>730</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12566464</Color>
+				<Text><![CDATA[population2]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Plot>
+				<Id>1780858052501</Id>
+				<Name><![CDATA[chart2]]></Name>
+				<X>320</X>
+				<Y>730</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1780858052500</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1780905600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>560</Width>
+				<Height>290</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<OnSelectionChangeCode>if ( !programmatically ) {
+	if ( selectedIndices.length == 1 ) {
+		loadParametersOfRun( selectedIndices[0] );
+	}
+	chart0.setSelectedItemIndices( selectedIndices );
+	chart1.setSelectedItemIndices( selectedIndices );
+	chart3.setSelectedItemIndices( selectedIndices );
+}
+</OnSelectionChangeCode>
+				<ChartArea>
+					<XOffset>30</XOffset>
+					<YOffset>20</YOffset>
+					<Width>500</Width>
+					<Height>210</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-9868951</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>40</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>100</SamplesToKeep>
+				<HorScaleFromExpression>0</HorScaleFromExpression>
+				<HorScaleToExpression>1</HorScaleToExpression>
+				<HorScaleType>AUTO</HorScaleType>
+			</Plot>
+			<Text>
+				<Id>1780858052503</Id>
+				<Name><![CDATA[text11]]></Name>
+				<X>350</X>
+				<Y>1040</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12566464</Color>
+				<Text><![CDATA[population3]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Plot>
+				<Id>1780858052505</Id>
+				<Name><![CDATA[chart3]]></Name>
+				<X>320</X>
+				<Y>1040</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1780858052504</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1780905600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">SECOND</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>560</Width>
+				<Height>290</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<OnSelectionChangeCode>if ( !programmatically ) {
+	if ( selectedIndices.length == 1 ) {
+		loadParametersOfRun( selectedIndices[0] );
+	}
+	chart0.setSelectedItemIndices( selectedIndices );
+	chart1.setSelectedItemIndices( selectedIndices );
+	chart2.setSelectedItemIndices( selectedIndices );
+}
+</OnSelectionChangeCode>
+				<ChartArea>
+					<XOffset>30</XOffset>
+					<YOffset>20</YOffset>
+					<Width>500</Width>
+					<Height>210</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-9868951</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>40</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>100</SamplesToKeep>
+				<HorScaleFromExpression>0</HorScaleFromExpression>
+				<HorScaleToExpression>1</HorScaleToExpression>
+				<HorScaleType>AUTO</HorScaleType>
+			</Plot>
 		</Presentation>
 		<Parameters>
 			<Parameter>
-				<ParameterName>FishesInitial</ParameterName>
+				<ParameterName>V_TypeOveride</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[V_TypeOveride]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
-				<ParameterName>PredatorsInitial</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>AWidth</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>ACellWidth</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>shipX</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>shipY</ParameterName>
-			</Parameter>
-			<Parameter>
-				<ParameterName>ZonesList</ParameterName>
+				<ParameterName>V_MutationChance</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[V_MutationChance]]></Code>
+				</ParameterValue>
 			</Parameter>
 		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>
-			<ExecutionMode>realTimeScaled</ExecutionMode>
-			<Title>MAS_project : Simulation</Title>
 			<EnableDeveloperPanel>true</EnableDeveloperPanel>
 			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-			<RealTimeScale>1.0</RealTimeScale>
+			<Title>MAS_project : CompareRuns</Title>
 		</PresentationProperties>
 		<ModelTimeProperties>
-			<StopOption>Never</StopOption>
+			<StopOption>Stop at specified time</StopOption>
 			<InitialDate>1779148800000</InitialDate>
 			<InitialTime>0.0</InitialTime>
-			<FinalDate>1781827200000</FinalDate>
-			<FinalTime>100.0</FinalTime>
+			<FinalDate>1784548800000</FinalDate>
+			<FinalTime>1500.0</FinalTime>
 		</ModelTimeProperties>
-		<BypassInitialScreen>true</BypassInitialScreen>
-	</SimulationExperiment>
+	</CompareRunsExperiment>
 </Experiments>
