@@ -18,6 +18,8 @@ exportFile.println(
 	+ "fishPopulationSizeType2"
 	+ "; "
 	+ "fishPopulationSizeType3"
+	+ "; "
+	+ "shipState"
 );
 ]]></StartupCode>
 	<Generic>false</Generic>
@@ -265,7 +267,7 @@ contaminatedFood.clear();
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780852614642" Target="1780852644425" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[500]]></Code>
+					<Code><![CDATA[200]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>true</Condition>
@@ -305,7 +307,7 @@ contaminatedFood.clear();
 			<IconOffset>20.0</IconOffset>
 			<Properties Source="1780852644425" Target="1780852647546" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[500]]></Code>
+					<Code><![CDATA[200]]></Code>
 					<Unit Class="TimeUnits">HOUR</Unit>
 				</Timeout>
 				<Condition>true</Condition>
@@ -464,7 +466,7 @@ contaminatedFood.clear();
 				<PackageName>mas_project</PackageName>
 				<ClassName>exportFile.csv</ClassName>
 			</ResourceReference>
-			<FileMode>WRITE</FileMode>
+			<FileMode>WRITE_APPEND</FileMode>
 			<CharsetName>null</CharsetName>
 			<Separators/>
 		</TextFile>

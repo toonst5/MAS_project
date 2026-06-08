@@ -31,6 +31,8 @@ exportFile.println(
 	+ type2count
 	+ "; "
 	+ type3count
+	+ "; "
+	+ statechart.getState()
 );
 /*ALCODEEND*/}
 
@@ -49,6 +51,8 @@ exportFile.println(
 	+ type2count
 	+ "; "
 	+ type3count
+	+ "; "
+	+ statechart.getState()
 );
 
 return f;

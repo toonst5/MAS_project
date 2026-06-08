@@ -18,7 +18,7 @@
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[50]]></Code>
+				<Code><![CDATA[100]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -59,7 +59,7 @@
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[uniform(80, 120)]]></Code>
+				<Code><![CDATA[uniform(30, 50)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

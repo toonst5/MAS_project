@@ -100,7 +100,7 @@ for (Node n : main.shelter_Nodes)
         }
     }
 	
-    if (d < minDist & inside<15) {
+    if (d < minDist & inside<10) {
         minDist = d;
         closestShelter = n;
     }
